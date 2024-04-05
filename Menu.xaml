@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="E:\Unicat Casino\images\menu_paypal_me.jpg" Grid.Column="0" Name="MenuUniImg"/>
+        <Image Source="images\menu_paypal_me.jpg" Grid.Column="0" Name="MenuUniImg"/>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
             <Button Content="Ustawienia" Click="ClickSettings" />
@@ -46,8 +46,8 @@
             <TextBlock Text="Wybierz Tryb Gry" FontSize="70" Margin="0 0 0 40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Button Click="FilpTheCoinGame" Content="Rzuć monetą"/>
-                <Button/>
-                <Button></Button>
+                <Button Click="BlackJackGame" Content="BlackJack"/>
+                <Button Click="RuletkaGame" Content="Ruletka"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button></Button>

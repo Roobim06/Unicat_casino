@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ruletka;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,7 +58,17 @@ namespace Unicat_Casino
             flipTheCoinGame.Show();
             this.Close();
         }
-
-        
+        private void BlackJackGame(object sender, RoutedEventArgs e)
+        {
+            BlackJack blackjack = new BlackJack();
+            blackjack.Show();
+            this.Close();
+        }
+        private void RuletkaGame(object sender, RoutedEventArgs e)
+        {
+            roulette ruletka = new roulette();
+            ruletka.Show();
+            this.Close();
+        }
     }
 }

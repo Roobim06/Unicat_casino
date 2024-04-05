@@ -18,9 +18,6 @@ using System.IO;
 
 namespace Unicat_Casino
 {
-    /// <summary>
-    /// Logika interakcji dla klasy BlackJack.xaml
-    /// </summary>
     public static class temp
     {
         public static Random rng = new Random();
