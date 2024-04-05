@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ruletka;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,18 @@ namespace Unicat_Casino
             this.Close();
         }
 
-        
+        private void OdpalRuletke(object sender, RoutedEventArgs e)
+        {
+            roulette okno = new roulette();
+            okno.Show();
+            this.Close();
+        }
+
+        private void OdpalBlackJack(object sender, RoutedEventArgs e)
+        {
+            BlackJack okno = new BlackJack();
+            okno.Show();
+            this.Close();
+        }
     }
 }
