@@ -48,7 +48,6 @@ namespace Unicat_Casino
 
             //int wynikLosowania = random.Next(0, 2);
            //coin.Visibility = Visibility.Collapsed;
-
             //var image = new BitmapImage();
             //image.BeginInit();
             //image.UriSource = new Uri("images/files/flip.gif");

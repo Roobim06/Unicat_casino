@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="E:\Unicat Casino\images\menu_paypal_me.jpg" Grid.Column="0" Name="MenuUniImg"/>
+        <Image Source="images\menu_paypal_me.jpg" Grid.Column="0" Name="MenuUniImg"/>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
             <Button Content="Ustawienia" Click="ClickSettings" />

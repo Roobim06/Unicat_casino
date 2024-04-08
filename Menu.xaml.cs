@@ -58,7 +58,6 @@ namespace Unicat_Casino
             flipTheCoinGame.Show();
             this.Close();
         }
-
         private void OdpalRuletke(object sender, RoutedEventArgs e)
         {
             roulette okno = new roulette();
