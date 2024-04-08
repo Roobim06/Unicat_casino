@@ -53,7 +53,7 @@ namespace Unicat_Casino
             image.BeginInit();
             image.UriSource = new Uri("images/files/flip.gif");
             image.EndInit();
-            ImageBehavior.SetAnimatedSource(coin, image);
+            //ImageBehavior.SetAnimatedSource(coin, image);
 
             Thread.Sleep(1500);
 
