@@ -58,16 +58,17 @@ namespace Unicat_Casino
             flipTheCoinGame.Show();
             this.Close();
         }
-        private void BlackJackGame(object sender, RoutedEventArgs e)
+        private void OdpalRuletke(object sender, RoutedEventArgs e)
         {
-            BlackJack blackjack = new BlackJack();
-            blackjack.Show();
+            roulette okno = new roulette();
+            okno.Show();
             this.Close();
         }
-        private void RuletkaGame(object sender, RoutedEventArgs e)
+
+        private void OdpalBlackJack(object sender, RoutedEventArgs e)
         {
-            roulette ruletka = new roulette();
-            ruletka.Show();
+            BlackJack okno = new BlackJack();
+            okno.Show();
             this.Close();
         }
     }

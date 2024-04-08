@@ -46,8 +46,8 @@
             <TextBlock Text="Wybierz Tryb Gry" FontSize="70" Margin="0 0 0 40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Button Click="FilpTheCoinGame" Content="Rzuć monetą"/>
-                <Button Click="BlackJackGame" Content="BlackJack"/>
-                <Button Click="RuletkaGame" Content="Ruletka"/>
+                <Button Click="OdpalBlackJack" Content="Blackjack"/>
+                <Button Click="OdpalRuletke">Ruletka</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button></Button>

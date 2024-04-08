@@ -46,19 +46,19 @@ namespace Unicat_Casino
         private void FilpCoin()
         {
 
-            int wynikLosowania = random.Next(0, 2);
-            coin.Visibility = Visibility.Collapsed;
+            //int wynikLosowania = random.Next(0, 2);
+           //coin.Visibility = Visibility.Collapsed;
+            //var image = new BitmapImage();
+            //image.BeginInit();
+            //image.UriSource = new Uri("images/files/flip.gif");
+            //image.EndInit();
+            
+           //ImageBehavior.SetAnimatedSource(coin, image);
 
-            var image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri("images/files/flip.gif");
-            image.EndInit();
-            //ImageBehavior.SetAnimatedSource(coin, image);
+            //Thread.Sleep(1500);
 
-            Thread.Sleep(1500);
-
-            wynik.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
-            coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/files/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/files/orzel.png", UriKind.Relative)); ;
+            //wynik.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
+            //coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/files/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/files/orzel.png", UriKind.Relative)); ;
 
             
             

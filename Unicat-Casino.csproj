@@ -10,9 +10,75 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\back.jpg" />
+    <None Remove="images\back.png" />
+    <None Remove="images\cards\10_karo.png" />
+    <None Remove="images\cards\10_kier.png" />
+    <None Remove="images\cards\10_pik.png" />
+    <None Remove="images\cards\10_trefl.png" />
+    <None Remove="images\cards\2_karo.png" />
+    <None Remove="images\cards\2_kier.png" />
+    <None Remove="images\cards\2_pik.png" />
+    <None Remove="images\cards\2_trefl.png" />
+    <None Remove="images\cards\3_karo.png" />
+    <None Remove="images\cards\3_kier.png" />
+    <None Remove="images\cards\3_pik.png" />
+    <None Remove="images\cards\3_trefl.png" />
+    <None Remove="images\cards\4_karo.png" />
+    <None Remove="images\cards\4_kier.png" />
+    <None Remove="images\cards\4_pik.png" />
+    <None Remove="images\cards\4_trefl.png" />
+    <None Remove="images\cards\5_karo.png" />
+    <None Remove="images\cards\5_kier.png" />
+    <None Remove="images\cards\5_pik.png" />
+    <None Remove="images\cards\5_trefl.png" />
+    <None Remove="images\cards\6_karo.png" />
+    <None Remove="images\cards\6_kier.png" />
+    <None Remove="images\cards\6_pik.png" />
+    <None Remove="images\cards\6_trefl.png" />
+    <None Remove="images\cards\7_karo.png" />
+    <None Remove="images\cards\7_kier.png" />
+    <None Remove="images\cards\7_pik.png" />
+    <None Remove="images\cards\7_trefl.png" />
+    <None Remove="images\cards\8_karo.png" />
+    <None Remove="images\cards\8_kier.png" />
+    <None Remove="images\cards\8_pik.png" />
+    <None Remove="images\cards\8_trefl.png" />
+    <None Remove="images\cards\9_karo.png" />
+    <None Remove="images\cards\9_kier.png" />
+    <None Remove="images\cards\9_pik.png" />
+    <None Remove="images\cards\9_trefl.png" />
+    <None Remove="images\cards\A_karo.png" />
+    <None Remove="images\cards\A_kier.png" />
+    <None Remove="images\cards\A_pik.png" />
+    <None Remove="images\cards\A_trefl.png" />
+    <None Remove="images\cards\J_karo.png" />
+    <None Remove="images\cards\J_kier.png" />
+    <None Remove="images\cards\J_pik.png" />
+    <None Remove="images\cards\J_trefl.png" />
+    <None Remove="images\cards\K_karo.png" />
+    <None Remove="images\cards\K_kier.png" />
+    <None Remove="images\cards\K_pik.png" />
+    <None Remove="images\cards\K_trefl.png" />
+    <None Remove="images\cards\Q_karo.png" />
+    <None Remove="images\cards\Q_kier.png" />
+    <None Remove="images\cards\Q_pik.png" />
+    <None Remove="images\cards\Q_trefl.png" />
+    <None Remove="images\files\flip.gif" />
     <None Remove="images\files\orzel.png" />
     <None Remove="images\files\reszka.png" />
     <None Remove="images\menu_paypal_me.jpg" />
+    <None Remove="images\ocena.png" />
+    <None Remove="images\roulettewheel.png" />
+    <None Remove="images\Unico.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DesignDataWithDesignTimeCreatableTypes Include="images\cards\9_pik.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\cards\3_kier.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,9 +86,65 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\back.jpg" />
+    <Resource Include="images\back.png" />
+    <Resource Include="images\cards\10_karo.png" />
+    <Resource Include="images\cards\10_kier.png" />
+    <Resource Include="images\cards\10_pik.png" />
+    <Resource Include="images\cards\10_trefl.png" />
+    <Resource Include="images\cards\2_karo.png" />
+    <Resource Include="images\cards\2_kier.png" />
+    <Resource Include="images\cards\2_pik.png" />
+    <Resource Include="images\cards\2_trefl.png" />
+    <Resource Include="images\cards\3_karo.png" />
+    <Resource Include="images\cards\3_pik.png" />
+    <Resource Include="images\cards\3_trefl.png" />
+    <Resource Include="images\cards\4_karo.png" />
+    <Resource Include="images\cards\4_kier.png" />
+    <Resource Include="images\cards\4_pik.png" />
+    <Resource Include="images\cards\4_trefl.png" />
+    <Resource Include="images\cards\5_karo.png" />
+    <Resource Include="images\cards\5_kier.png" />
+    <Resource Include="images\cards\5_pik.png" />
+    <Resource Include="images\cards\5_trefl.png" />
+    <Resource Include="images\cards\6_karo.png" />
+    <Resource Include="images\cards\6_kier.png" />
+    <Resource Include="images\cards\6_pik.png" />
+    <Resource Include="images\cards\6_trefl.png" />
+    <Resource Include="images\cards\7_karo.png" />
+    <Resource Include="images\cards\7_kier.png" />
+    <Resource Include="images\cards\7_pik.png" />
+    <Resource Include="images\cards\7_trefl.png" />
+    <Resource Include="images\cards\8_karo.png" />
+    <Resource Include="images\cards\8_kier.png" />
+    <Resource Include="images\cards\8_pik.png" />
+    <Resource Include="images\cards\8_trefl.png" />
+    <Resource Include="images\cards\9_karo.png" />
+    <Resource Include="images\cards\9_kier.png" />
+    <Resource Include="images\cards\9_trefl.png" />
+    <Resource Include="images\cards\A_karo.png" />
+    <Resource Include="images\cards\A_kier.png" />
+    <Resource Include="images\cards\A_pik.png" />
+    <Resource Include="images\cards\A_trefl.png" />
+    <Resource Include="images\cards\J_karo.png" />
+    <Resource Include="images\cards\J_kier.png" />
+    <Resource Include="images\cards\J_pik.png" />
+    <Resource Include="images\cards\J_trefl.png" />
+    <Resource Include="images\cards\K_karo.png" />
+    <Resource Include="images\cards\K_kier.png" />
+    <Resource Include="images\cards\K_pik.png" />
+    <Resource Include="images\cards\K_trefl.png" />
+    <Resource Include="images\cards\Q_karo.png" />
+    <Resource Include="images\cards\Q_kier.png" />
+    <Resource Include="images\cards\Q_pik.png" />
+    <Resource Include="images\cards\Q_trefl.png" />
+    <Resource Include="images\files\flip.gif" />
     <Resource Include="images\files\orzel.png" />
     <Resource Include="images\files\reszka.png" />
     <Resource Include="images\menu_paypal_me.jpg" />
+    <Resource Include="images\ocena.png" />
+    <Resource Include="images\roulettewheel.png" />
+    <Resource Include="images\Unico.jpg" />
   </ItemGroup>
 
 </Project>
