@@ -16,7 +16,7 @@
                 <TextBox x:Name="PassLog" Width="400" Height="60"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Zarejestruj się" FontSize="20" Margin="10"  MouseDown="Register_Click" Cursor="Hand"/>
-                    <TextBlock Text="Nie pamiętam hasła" Cursor="Hand" FontSize="20" Margin="10"/>
+                    <TextBlock Text="Nie pamiętam hasła" Cursor="Hand" FontSize="20" MouseDown="TextBlock_MouseDown" Margin="10"/>
                 </StackPanel>
                 <Button Click="Login">Zaloguj się</Button>
             </StackPanel>

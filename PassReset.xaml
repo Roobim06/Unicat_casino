@@ -1,0 +1,40 @@
+﻿<Window x:Class="Unicat_Casino.PassReset"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unicat_Casino"
+        mc:Ignorable="d"
+        Title="Resetuj Hasło" Height="1080" Width="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="stage1" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="522" Visibility="Visible">
+            <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold">Formularz resetowania hasła</TextBlock>
+            <Label FontSize="30">Podaj email na ktorym miałes załozone konto</Label>
+            <TextBox x:Name="emailenter" TextChanged="emailenter_TextChanged"></TextBox>
+            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click">Wyslij kod</Button>
+        </StackPanel>
+        <StackPanel x:Name="stage2"  Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+            <TextBlock FontSize="40" TextAlignment="Center">
+                Prosze podaj kod przesłany na email
+            </TextBlock>
+            <TextBox x:Name="codeenter"></TextBox>
+            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_1">Sprawdz Kod</Button>
+        </StackPanel>
+        <StackPanel x:Name="stage3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="522" Visibility="Collapsed">
+            <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold">Formularz resetowania hasła</TextBlock>
+            <Label FontSize="30">Podaj nowe hasło</Label>
+            <TextBox x:Name="passenter" TextChanged="passenter_TextChanged"></TextBox>
+            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_2">Zresetuj hasło</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -199,5 +199,12 @@ namespace Unicat_Casino
                 textBox.Foreground = Brushes.Red;
             }
         }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PassReset okno = new PassReset();
+            okno.Show();
+            this.Close();
+        }
     }
 }
