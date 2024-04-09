@@ -11,9 +11,9 @@
         <DockPanel VerticalAlignment="Center">
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Name="LoginPanel">
                 <TextBlock Text="Nazwa użytkownika" FontSize="20" Margin="10"/>
-                <TextBox Width="400" Height="60"/>
+                <TextBox x:Name="NickLog" Width="400" Height="60"/>
                 <TextBlock Text="Hasło" FontSize="20" Margin="10"/>
-                <TextBox Width="400" Height="60"/>
+                <TextBox x:Name="PassLog" Width="400" Height="60"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Zarejestruj się" FontSize="20" Margin="10"  MouseDown="Register_Click" Cursor="Hand"/>
                     <TextBlock Text="Nie pamiętam hasła" Cursor="Hand" FontSize="20" Margin="10"/>
@@ -24,11 +24,11 @@
 
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"  Visibility="Collapsed" Name="RegisterPanel">
                 <TextBlock Text="Nazwa użytkownika" FontSize="20" Margin="10"/>
-                <TextBox Width="400" Height="60"/>
+                <TextBox x:Name="NickEnter"  Width="400" Height="60"/>
                 <TextBlock Text="Email" FontSize="20" Margin="10"/>
-                <TextBox Width="400" Height="60"/>
-                <TextBlock Text="Hasło" FontSize="20" Margin="10"/>
-                <TextBox Width="400" Height="60"/>
+                <TextBox x:Name="EmailEnter" Width="400" TextChanged="EmailEnter_TextChanged" Height="60"/>
+                <TextBlock  Text="Hasło" FontSize="20" Margin="10"/>
+                <TextBox x:Name="PasswordEnter" Width="400" TextChanged="PasswordEnter_TextChanged" Height="60"/>
                 <TextBlock Text="Zaloguj się" FontSize="20" Margin="10"  MouseDown="Login_Click" Cursor="Hand"/>
                 <Button Click="Register">Zarejestruj się</Button>
             </StackPanel>

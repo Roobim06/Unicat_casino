@@ -20,6 +20,7 @@ namespace Unicat_Casino
         public Menu()
         {
             InitializeComponent();
+            Datacontexthere.DataContext = konta.konto;
         }
 
         private void ClickExit(object sender, RoutedEventArgs e)
