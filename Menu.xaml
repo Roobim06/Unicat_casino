@@ -29,7 +29,7 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
             <Button Content="Ustawienia" Click="ClickSettings" />
-            <Button Content="Wyjście" Click="ClickExit" />
+            <Button Content="Wyloguj" Click="ClickExit" />
         </StackPanel>
 
         <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>

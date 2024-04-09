@@ -25,7 +25,10 @@ namespace Unicat_Casino
 
         private void ClickExit(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            konta.konto = null;
+            MainWindow okno = new MainWindow();
+            okno.Show();
+            this.Close();
         }
         private void ClickSettings(object sender, RoutedEventArgs e)
         {
