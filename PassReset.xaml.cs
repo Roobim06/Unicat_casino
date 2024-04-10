@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using MailKit.Net.Smtp;
 using MimeKit;
 using System.Security.Cryptography;
+using MailKit.Security;
 
 namespace Unicat_Casino
 {
@@ -102,7 +103,7 @@ namespace Unicat_Casino
                 {
                     code = GenerateRandomUpperCaseLetters();
                     string email = "damig@onet.pl";
-                    string password = "Robert12";
+                    string password = "45*54(qwer";
                     var message = new MimeMessage();
                     message.From.Add(new MailboxAddress("Resetowanie hasla", email));
                     message.To.Add(new MailboxAddress("Odbiorca", email));

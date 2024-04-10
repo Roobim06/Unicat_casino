@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        Title="Menu" Height="1080" Width="1920">
+        Title="Menu" WindowState="Maximized"
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="600"/>

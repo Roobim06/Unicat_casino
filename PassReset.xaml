@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        Title="Resetuj Hasło" Height="1080" Width="1920">
+        Title="Resetuj Hasło" ResizeMode="NoResize" WindowState="Maximized"
+    WindowStyle="None" Height="1080" Width="1920">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>

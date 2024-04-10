@@ -58,7 +58,7 @@ namespace Unicat_Casino
                 string query = "SELECT Nick, Tokens FROM [User] WHERE CONVERT(varchar(max), Nick) = @Nick AND CONVERT(varchar(max), Password) = @Password;";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Nick", NickLog.Text);
-                command.Parameters.AddWithValue("@Password", HashPassword(PassLog.Text));
+                command.Parameters.AddWithValue("@Password", HashPassword(PassLog.Password));
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
@@ -145,7 +145,7 @@ namespace Unicat_Casino
                     }
                     else
                     {
-                        query = "insert into[dbo].[User] values('" + NickEnter.Text + "', '" + EmailEnter.Text + "', '" + HashPassword(PasswordEnter.Text) + "', 200)";
+                        query = "insert into[dbo].[User] values('" + NickEnter.Text + "', '" + EmailEnter.Text + "', '" + HashPassword(PasswordEnter.Password) + "', 200)";
                         command = new SqlCommand(query, connection);
                         reader = command.ExecuteReader();
                         MessageBox.Show("Założono konto");
@@ -183,10 +183,19 @@ namespace Unicat_Casino
             }
         }
 
-        private void PasswordEnter_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (Regex.IsMatch(textBox.Text, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"))
+            MessageBox.Show("obecnie nie dziala");
+            //PassReset okno = new PassReset();
+            //okno.Show();
+            //this.Close();
+        }
+
+        private void PasswordEnter_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordBox textBox = sender as PasswordBox;
+            if (Regex.IsMatch(textBox.Password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"))
             {
                 ToolTipService.SetToolTip(textBox, null);
                 textBox.Foreground = Brushes.Black;
@@ -200,11 +209,38 @@ namespace Unicat_Casino
             }
         }
 
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
-            PassReset okno = new PassReset();
-            okno.Show();
-            this.Close();
+            CheckBox checks = sender as CheckBox;
+            if (checks.IsChecked == true)
+            {
+                Passlog2.Text = PassLog.Password;
+                PassLog.Visibility = Visibility.Collapsed;
+                Passlog2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PassLog.Password = Passlog2.Text;
+                Passlog2.Visibility = Visibility.Collapsed;
+                PassLog.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void CheckBox_Click_1(object sender, RoutedEventArgs e)
+        {
+            CheckBox checks = sender as CheckBox;
+            if (checks.IsChecked == true)
+            {
+                PasswordEnter2.Text = PasswordEnter.Password;
+                PasswordEnter.Visibility = Visibility.Collapsed;
+                PasswordEnter2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PasswordEnter.Password = PasswordEnter2.Text;
+                PasswordEnter2.Visibility = Visibility.Collapsed;
+                PasswordEnter.Visibility = Visibility.Visible;
+            }
         }
     }
 }
