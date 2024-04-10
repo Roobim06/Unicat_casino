@@ -25,5 +25,20 @@ namespace Unicat_Casino
             InitializeComponent();
             ShowRandomDice();
         }
+        private void ShowRandomDice()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                string diceFile = $"PathToYourDiceImagesFolder/{i}_dice.png"; // Ścieżka do pliku kostki
+                BitmapImage diceImage = new BitmapImage(new Uri(diceFile));
+                Image imageControl = new Image
+                {
+                    Source = diceImage,
+                    Margin = new Thickness(5) // Margines między obrazami
+                };
+                diceStackPanel.Children.Add(imageControl);
+
+            }
+        }
     }
 }
