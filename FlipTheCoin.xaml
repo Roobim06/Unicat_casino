@@ -20,6 +20,7 @@
             <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="wynik1"/>
             <TextBlock Text="" FontSize="30" HorizontalAlignment="Center" Name="wynik2"/>
         
+            
         </StackPanel>
     </Grid>
 </Window>
