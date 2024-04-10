@@ -42,13 +42,16 @@ namespace Unicat_Casino
 
         }
 
-        private void ClickCancelButton(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e) 
         {
             MenuUniImg.Visibility = Visibility.Visible;
             MainMenu.Visibility = Visibility.Visible;
 
             GamesPanel.Visibility = Visibility.Collapsed;
             CancelButton.Visibility = Visibility.Collapsed;
+
+
+
 
         }
 
@@ -71,5 +74,12 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
+
+        private void OdpalRollTheDice(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

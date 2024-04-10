@@ -1,0 +1,24 @@
+﻿<Window x:Class="Unicat_Casino.RollTheDice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unicat_Casino"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Rzut monetą" Height="1080" Width="1920">
+    <Grid>
+        <!--<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="images/files/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
+
+            <TextBlock Text="Rzuć kostką" FontSize="40" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <Slider Width="300" Maximum="6" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight"/>
+            </StackPanel>
+            <TextBlock  FontSize="30" HorizontalAlignment="Center" Name="wynik"/>
+
+        </StackPanel>-->
+
+
+    </Grid>
+</Window>

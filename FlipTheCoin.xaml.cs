@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -16,6 +17,10 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Drawing;
 using static System.Net.Mime.MediaTypeNames;
+using System;
+using System.Windows.Media.Animation;
+using WpfAnimatedGif;
+using System.Windows.Threading;
 
 namespace Unicat_Casino
 {
@@ -43,26 +48,29 @@ namespace Unicat_Casino
             FilpCoin();
         }
 
-        private void FilpCoin()
+        private async void FilpCoin()
         {
+            betOrzel.IsEnabled = false;
+            betReszka.IsEnabled = false;
+            coin.Visibility = Visibility.Collapsed;
+            coinFlip.Visibility = Visibility.Visible;
+            wynik1.Text = "";
+            wynik2.Text = "";
 
-            //int wynikLosowania = random.Next(0, 2);
-           //coin.Visibility = Visibility.Collapsed;
-            //var image = new BitmapImage();
-            //image.BeginInit();
-            //image.UriSource = new Uri("images/files/flip.gif");
-            //image.EndInit();
-            
-           //ImageBehavior.SetAnimatedSource(coin, image);
 
-            //Thread.Sleep(1500);
+            int wynikLosowania = random.Next(0, 2);
+            await Task.Delay(1000);
+            wynik1.Text = wynikLosowania == 0 ? "Reszka" : "Orzeł";
+            wynik2.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
 
-            //wynik.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
-            //coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/files/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/files/orzel.png", UriKind.Relative)); ;
+            coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/coin/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/coin/orzel.png", UriKind.Relative));
 
-            
-            
+            coin.Visibility = Visibility.Visible;
+            coinFlip.Visibility = Visibility.Collapsed;
+            betOrzel.IsEnabled = true;
+            betReszka.IsEnabled = true;
 
+            //
         }
     }
 }
