@@ -50,6 +50,9 @@ namespace Unicat_Casino
             GamesPanel.Visibility = Visibility.Collapsed;
             CancelButton.Visibility = Visibility.Collapsed;
 
+
+
+
         }
 
         private void FilpTheCoinGame(object sender, RoutedEventArgs e)
