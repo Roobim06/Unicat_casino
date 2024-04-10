@@ -70,6 +70,7 @@ namespace Unicat_Casino
             betOrzel.IsEnabled = true;
             betReszka.IsEnabled = true;
 
+            //
         }
     }
 }

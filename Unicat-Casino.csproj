@@ -139,7 +139,7 @@
     <Resource Include="images\cards\Q_pik.png" />
     <Resource Include="images\cards\Q_trefl.png" />
     <Resource Include="images\coin\flip.gif" />
-    <Resource Include="images\coin\orzel.png" />
+    <Resource Include="images\coin\orzel.png" /> 
     <Resource Include="images\coin\reszka.png" />
     <Resource Include="images\menu_paypal_me.jpg" />
     <Resource Include="images\ocena.png" />

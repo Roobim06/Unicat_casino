@@ -42,7 +42,7 @@ namespace Unicat_Casino
 
         }
 
-        private void ClickCancelButton(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e) 
         {
             MenuUniImg.Visibility = Visibility.Visible;
             MainMenu.Visibility = Visibility.Visible;
