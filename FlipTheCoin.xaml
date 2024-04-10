@@ -9,17 +9,16 @@
         Title="Rzut monetą" Height="1080" Width="1920">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="images/files/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
+            <Image Source="images/coin/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
+            <Image Width="400" Height="400" HorizontalAlignment="Center" Name="coinFlip" Visibility="Collapsed" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="https://i.pinimg.com/originals/cc/47/83/cc4783a977efbb9cd2a74d6761d7d8d3.gif"/>
 
             <TextBlock Text="Rzuć monetą" FontSize="40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Orzeł" Click="FlipOrzel"/>
-                <Button Content="Reszka" Click="FlipReszka"/>
+                <Button Content="Orzeł" Click="FlipOrzel" Name="betOrzel"/>
+                <Button Content="Reszka" Click="FlipReszka" Name="betReszka" />
             </StackPanel>
-            <TextBlock Text="" FontSize="30" HorizontalAlignment="Center" Name="wynik"/>
-
+            <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="wynik1"/>
+            <TextBlock Text="" FontSize="30" HorizontalAlignment="Center" Name="wynik2"/>
         </StackPanel>
-
-
     </Grid>
 </Window>

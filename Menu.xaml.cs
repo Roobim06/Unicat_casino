@@ -71,5 +71,12 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
+
+        private void OdpalRollTheDice(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

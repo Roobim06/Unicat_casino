@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ruletka"
         mc:Ignorable="d"
-        Title="roulette" Height="450" Width="800">
+        Title="Ruletka" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button">  
             
