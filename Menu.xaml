@@ -50,7 +50,7 @@
                 <Button Click="OdpalRuletke">Ruletka</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button></Button>
+                <Button Click="OdpalMniejszeWieksze">Mniejsze Większe</Button>
                 <Button></Button>
                 <Button></Button>
             </StackPanel>

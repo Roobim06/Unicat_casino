@@ -71,5 +71,12 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
+
+        private void OdpalMniejszeWieksze(object sender, RoutedEventArgs e)
+        {
+            MniejszeWieksze okno = new MniejszeWieksze();
+            okno.Show();
+            this.Close();
+        }
     }
 }
