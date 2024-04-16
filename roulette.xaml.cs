@@ -395,5 +395,12 @@ namespace Ruletka
                 handlewin();
             }
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+            okno.Show();
+            this.Close();
+        }
     }
 }

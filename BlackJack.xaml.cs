@@ -97,7 +97,7 @@ namespace Unicat_Casino
             {
                 foreach (string numer in numery)
                 {
-                    path = "images/cards/" + numer + "_" + symbol + ".png";
+                    path = "images/cards/" + numer + "_" + symbol + ".jpg";
                     talia.Add(new karty(symbol, numer, path, true));
                 }
             }
@@ -116,6 +116,7 @@ namespace Unicat_Casino
                 {
                     tokens = tokens * 2;
                     reset.Text = "Wygrałes " + tokens + " zetonow\n grasz od nowa?";
+                    konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
                     zakonczture.IsEnabled = false;
@@ -130,6 +131,7 @@ namespace Unicat_Casino
                 else if(playerpoints == dealerpoints)
                 {
                     reset.Text = "Remis, twoje zetony wracaja do ciebie\n grasz od nowa?";
+                    konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
                     zakonczture.IsEnabled = false;
@@ -172,6 +174,7 @@ namespace Unicat_Casino
             {
                 tokens = Convert.ToInt32(tokens * 1.5);
                 reset.Text = "Blackjack! Wygrywasz " + tokens + " zetonow\n grasz od nowa?";
+                konta.UpdateTokens(tokens);
                 end = true;
                 dobierzkarte.IsEnabled = false;
                 zakonczture.IsEnabled = false;
@@ -223,6 +226,7 @@ namespace Unicat_Casino
             {
                 tokens = Convert.ToInt32(tokens * 2);
                 reset.Text = "Dealer przegral! Wygrywasz " + tokens + " zetonow\n grasz od nowa?";
+                konta.UpdateTokens(tokens);
                 end = true;
                 dobierzkarte.IsEnabled = false;
                 zakonczture.IsEnabled = false;
@@ -263,7 +267,7 @@ namespace Unicat_Casino
             {
                 if (karta.odkryte == false)
                 {
-                    imagePaths.Add("/images/back.png");
+                    imagePaths.Add("/images/back.jpg");
                 }
                 else
                 {
@@ -358,12 +362,14 @@ namespace Unicat_Casino
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+            okno.Show();
             this.Close();
         }
 
         private void plus_Click(object sender, RoutedEventArgs e)
         {
-            if(tokens >= 2000)
+            if(tokens >= konta.konto.Tokens)
             {
                 minus.IsEnabled = true;
                 plus.IsEnabled = false;
@@ -416,6 +422,7 @@ namespace Unicat_Casino
             zakonczture.Visibility = Visibility.Visible;
             playertable.Visibility = Visibility.Visible;
             dealertable.Visibility = Visibility.Visible;
+            konta.UpdateTokens(tokens * -1);
             firstturn();
         }
     }

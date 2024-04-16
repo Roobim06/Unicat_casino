@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        Title="BlackJack" Height="450" Width="800">
+        Title="BlackJack" WindowState="Maximized"
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
+    <Window.Resources>
+        <Style TargetType="Button"></Style>
+    </Window.Resources>
     <Grid x:Name="maingrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
