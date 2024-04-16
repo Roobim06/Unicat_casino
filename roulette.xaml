@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ruletka"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="roulette" Height="450" Width="800">
+        Title="Ruletka" Height="1080" Width="1920">
     <Window.Resources>
-        <Style TargetType="Button">  
-            
+        <Style TargetType="Button">
+
         </Style>
     </Window.Resources>
     <Grid>
@@ -23,7 +24,8 @@
             <ColumnDefinition Width="4*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Source="images/roulettewheel.png" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp"></Image>
+        <Image x:Name="nospin" Source="images/roulettewheel.png" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp" Stretch="Uniform"></Image>
+        <Image x:Name="spin" gif:ImageBehavior.AnimatedSource="images/roulettewheelspin.gif" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"></Image>
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>

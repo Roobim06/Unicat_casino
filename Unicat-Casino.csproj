@@ -70,11 +70,52 @@
     <None Remove="images\menu_paypal_me.jpg" />
     <None Remove="images\ocena.png" />
     <None Remove="images\roulettewheel.png" />
+    <None Remove="images\roulettewheelspin.gif" />
+    <None Remove="images\roulette\roulettewheel_0.png" />
+    <None Remove="images\roulette\roulettewheel_1.png" />
+    <None Remove="images\roulette\roulettewheel_10.png" />
+    <None Remove="images\roulette\roulettewheel_11.png" />
+    <None Remove="images\roulette\roulettewheel_12.png" />
+    <None Remove="images\roulette\roulettewheel_13.png" />
+    <None Remove="images\roulette\roulettewheel_14.png" />
+    <None Remove="images\roulette\roulettewheel_15.png" />
+    <None Remove="images\roulette\roulettewheel_16.png" />
+    <None Remove="images\roulette\roulettewheel_17.png" />
+    <None Remove="images\roulette\roulettewheel_18.png" />
+    <None Remove="images\roulette\roulettewheel_19.png" />
+    <None Remove="images\roulette\roulettewheel_2.png" />
+    <None Remove="images\roulette\roulettewheel_20.png" />
+    <None Remove="images\roulette\roulettewheel_21.png" />
+    <None Remove="images\roulette\roulettewheel_22.png" />
+    <None Remove="images\roulette\roulettewheel_23.png" />
+    <None Remove="images\roulette\roulettewheel_24.png" />
+    <None Remove="images\roulette\roulettewheel_25.png" />
+    <None Remove="images\roulette\roulettewheel_26.png" />
+    <None Remove="images\roulette\roulettewheel_27.png" />
+    <None Remove="images\roulette\roulettewheel_28.png" />
+    <None Remove="images\roulette\roulettewheel_29.png" />
+    <None Remove="images\roulette\roulettewheel_3.png" />
+    <None Remove="images\roulette\roulettewheel_30.png" />
+    <None Remove="images\roulette\roulettewheel_31.png" />
+    <None Remove="images\roulette\roulettewheel_32.png" />
+    <None Remove="images\roulette\roulettewheel_33.png" />
+    <None Remove="images\roulette\roulettewheel_34.png" />
+    <None Remove="images\roulette\roulettewheel_35.png" />
+    <None Remove="images\roulette\roulettewheel_36.png" />
+    <None Remove="images\roulette\roulettewheel_4.png" />
+    <None Remove="images\roulette\roulettewheel_5.png" />
+    <None Remove="images\roulette\roulettewheel_6.png" />
+    <None Remove="images\roulette\roulettewheel_7.png" />
+    <None Remove="images\roulette\roulettewheel_8.png" />
+    <None Remove="images\roulette\roulettewheel_9.png" />
     <None Remove="images\Unico.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <DesignDataWithDesignTimeCreatableTypes Include="images\cards\9_pik.png" />
+    <Resource Include="images\roulettewheelspin.gif" />
+    <Resource Include="images\roulette\roulettewheel_8.png" />
+    <Resource Include="images\roulette\roulettewheel_3.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -154,6 +195,41 @@
     <Resource Include="images\menu_paypal_me.jpg" />
     <Resource Include="images\ocena.png" />
     <Resource Include="images\roulettewheel.png" />
+    <Resource Include="images\roulette\roulettewheel_0.png" />
+    <Resource Include="images\roulette\roulettewheel_1.png" />
+    <Resource Include="images\roulette\roulettewheel_10.png" />
+    <Resource Include="images\roulette\roulettewheel_11.png" />
+    <Resource Include="images\roulette\roulettewheel_12.png" />
+    <Resource Include="images\roulette\roulettewheel_13.png" />
+    <Resource Include="images\roulette\roulettewheel_14.png" />
+    <Resource Include="images\roulette\roulettewheel_15.png" />
+    <Resource Include="images\roulette\roulettewheel_16.png" />
+    <Resource Include="images\roulette\roulettewheel_17.png" />
+    <Resource Include="images\roulette\roulettewheel_18.png" />
+    <Resource Include="images\roulette\roulettewheel_19.png" />
+    <Resource Include="images\roulette\roulettewheel_2.png" />
+    <Resource Include="images\roulette\roulettewheel_20.png" />
+    <Resource Include="images\roulette\roulettewheel_21.png" />
+    <Resource Include="images\roulette\roulettewheel_22.png" />
+    <Resource Include="images\roulette\roulettewheel_23.png" />
+    <Resource Include="images\roulette\roulettewheel_24.png" />
+    <Resource Include="images\roulette\roulettewheel_25.png" />
+    <Resource Include="images\roulette\roulettewheel_26.png" />
+    <Resource Include="images\roulette\roulettewheel_27.png" />
+    <Resource Include="images\roulette\roulettewheel_28.png" />
+    <Resource Include="images\roulette\roulettewheel_29.png" />
+    <Resource Include="images\roulette\roulettewheel_30.png" />
+    <Resource Include="images\roulette\roulettewheel_31.png" />
+    <Resource Include="images\roulette\roulettewheel_32.png" />
+    <Resource Include="images\roulette\roulettewheel_33.png" />
+    <Resource Include="images\roulette\roulettewheel_34.png" />
+    <Resource Include="images\roulette\roulettewheel_35.png" />
+    <Resource Include="images\roulette\roulettewheel_36.png" />
+    <Resource Include="images\roulette\roulettewheel_4.png" />
+    <Resource Include="images\roulette\roulettewheel_5.png" />
+    <Resource Include="images\roulette\roulettewheel_6.png" />
+    <Resource Include="images\roulette\roulettewheel_7.png" />
+    <Resource Include="images\roulette\roulettewheel_9.png" />
     <Resource Include="images\Unico.jpg" />
   </ItemGroup>
 
