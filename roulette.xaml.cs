@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Threading.Tasks;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Unicat_Casino;
 
 namespace Ruletka
 {
@@ -36,6 +37,7 @@ namespace Ruletka
         public roulette()
         {
             InitializeComponent();
+            sliderzetony.Maximum = konta.konto.Tokens;
         }
         private void updateinfo()
         {
@@ -52,6 +54,7 @@ namespace Ruletka
 
         private void sliderzetony_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            sliderzetony.Maximum = konta.konto.Tokens;
             postawionezetony = Convert.ToInt32(sliderzetony.Value);
             żetony.Content = postawionezetony;
         }
@@ -65,6 +68,7 @@ namespace Ruletka
                     wygranezetony += 1;
                 }
                 MessageBox.Show("Gratulacje! wygrales " + wygranezetony + " zetonow");
+                konta.UpdateTokens(wygranezetony);
             }
             else
             {
@@ -101,6 +105,7 @@ namespace Ruletka
             }
             else
             {
+                konta.UpdateTokens(postawionezetony * -1);
                 ShowGif(); // Definiuj tę metodę, aby wyświetlić GIF
 
                 await Task.Delay(5000); // Poczekaj 5 sekund (dostosuj według potrzeb)
