@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
         Title="Settings" Height="1080" Width="1920">
+    <Window.Resources>
+        <Style TargetType="Button">
+            
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Button Click="Button_Click">Dodaj se zetony +200</Button>
     </Grid>
 </Window>

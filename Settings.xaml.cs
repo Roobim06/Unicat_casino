@@ -23,5 +23,10 @@ namespace Unicat_Casino
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            konta.UpdateTokens(200);
+        }
     }
 }
