@@ -46,6 +46,13 @@ namespace Ruletka
 
         private void table_Click(object sender, RoutedEventArgs e)
         {
+            if(konta.konto.Tokens == 0)
+            {
+                MessageBox.Show("nie stac cie biedaku");
+                Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+                okno.Show();
+                this.Close();
+            }
             var objekt = (sender as System.Windows.Controls.Button);
             currentbet = objekt.Name;
             zaklad = objekt.Uid;
@@ -106,26 +113,18 @@ namespace Ruletka
             else
             {
                 konta.UpdateTokens(postawionezetony * -1);
-                ShowGif(); // Definiuj tę metodę, aby wyświetlić GIF
-
-                await Task.Delay(5000); // Poczekaj 5 sekund (dostosuj według potrzeb)
-
-                // Ukryj GIF tutaj
+                ShowGif();
+                sliderzetony.IsEnabled = false;
+                await Task.Delay(5000);
                 HideGif();
-
                 Random rand = new Random();
                 int wylosowanaliczba = rand.Next(0, 37);
                 string imageName = "roulettewheel_" + wylosowanaliczba + ".png";
-
-                // Utwórz ścieżkę do pliku obrazu
                 string imagePath = "images\\roulette\\" + imageName;
-
-                // Utwórz obiekt BitmapImage z podanej ścieżki
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
                 bitmap.EndInit();
-
                 nospin.Source = bitmap;
                 if (zaklad == "first 12")
                 {

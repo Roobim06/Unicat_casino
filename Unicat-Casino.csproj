@@ -50,6 +50,7 @@
     <None Remove="images\cards\5_kier.png" />
     <None Remove="images\cards\5_pik.jpg" />
     <None Remove="images\cards\5_pik.png" />
+    <None Remove="images\cards\5_trefl.jpg" />
     <None Remove="images\cards\5_trefl.png" />
     <None Remove="images\cards\6_karo.jpg" />
     <None Remove="images\cards\6_karo.png" />
@@ -115,9 +116,9 @@
     <None Remove="images\cards\Q_pik.png" />
     <None Remove="images\cards\Q_trefl.jpg" />
     <None Remove="images\cards\Q_trefl.png" />
-    <None Remove="images\files\flip.gif" />
-    <None Remove="images\files\orzel.png" />
-    <None Remove="images\files\reszka.png" />
+    <None Remove="images\coin\flip.gif" />
+    <None Remove="images\coin\orzel.png" />
+    <None Remove="images\coin\reszka.png" />
     <None Remove="images\menu_paypal_me.jpg" />
     <None Remove="images\ocena.png" />
     <None Remove="images\roulettewheel.png" />
@@ -163,7 +164,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <DesignDataWithDesignTimeCreatableTypes Include="images\cards\9_pik.png" />
+    <Resource Include="images\cards\9_pik.png" />
+    <Resource Include="images\cards\5_trefl.jpg" />
     <Resource Include="images\cards\Q_karo.jpg" />
     <Resource Include="images\cards\K_kier.jpg" />
     <Resource Include="images\cards\10_karo.jpg" />
@@ -291,9 +293,9 @@
     <Resource Include="images\cards\Q_kier.png" />
     <Resource Include="images\cards\Q_pik.png" />
     <Resource Include="images\cards\Q_trefl.png" />
-    <Resource Include="images\files\flip.gif" />
-    <Resource Include="images\files\orzel.png" />
-    <Resource Include="images\files\reszka.png" />
+    <Resource Include="images\coin\flip.gif" />
+    <Resource Include="images\coin\orzel.png" />
+    <Resource Include="images\coin\reszka.png" />
     <Resource Include="images\menu_paypal_me.jpg" />
     <Resource Include="images\ocena.png" />
     <Resource Include="images\roulettewheel.png" />

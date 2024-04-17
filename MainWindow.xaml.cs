@@ -186,10 +186,9 @@ namespace Unicat_Casino
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("obecnie nie dziala");
-            //PassReset okno = new PassReset();
-            //okno.Show();
-            //this.Close();
+            PassReset okno = new PassReset();
+            okno.Show();
+            this.Close();
         }
 
         private void PasswordEnter_PasswordChanged(object sender, RoutedEventArgs e)
