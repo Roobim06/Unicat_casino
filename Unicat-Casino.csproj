@@ -10,8 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\back.jpg" />
     <None Remove="images\back.png" />
+    <None Remove="images\back1.jpg" />
+    <None Remove="images\back2.jpg" />
+    <None Remove="images\back3.jpg" />
     <None Remove="images\cards\10_karo.jpg" />
     <None Remove="images\cards\10_karo.png" />
     <None Remove="images\cards\10_kier.jpg" />
@@ -164,6 +166,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\back2.jpg" />
+    <Resource Include="images\back3.jpg" />
     <Resource Include="images\cards\9_pik.png" />
     <Resource Include="images\cards\5_trefl.jpg" />
     <Resource Include="images\cards\Q_karo.jpg" />
@@ -241,7 +245,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\back.jpg" />
+    <Resource Include="images\back1.jpg" />
     <Resource Include="images\back.png" />
     <Resource Include="images\cards\10_karo.png" />
     <Resource Include="images\cards\10_kier.png" />

@@ -12,6 +12,7 @@ namespace Unicat_Casino
     {
         public string Nick { get; set; }
         public int Tokens { get; set; }
+        public int cardback { get; set; }
         public User(string Nick, int Tokens)
         {
             this.Nick = Nick;

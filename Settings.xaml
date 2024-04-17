@@ -5,13 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        Title="Settings" Height="1080" Width="1920">
+        Title="Settings" WindowState="Maximized"
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button">
             
         </Style>
     </Window.Resources>
     <Grid>
-        <Button Click="Button_Click">Dodaj se zetony +200</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Click="Button_Click_1">X</Button>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <TextBlock>Wybierz tył kart</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="uno" Width="200" Uid="1" Click="Button_Click_2" IsEnabled="false">
+                    <Image Source="images/back1.jpg"></Image>
+                </Button>
+                <Button x:Name="dos" Width="200" Uid="2" Click="Button_Click_2">
+                    <Image Source="images/back2.jpg"></Image>
+                </Button>
+                <Button x:Name="tres" Width="200" Uid="3" Click="Button_Click_2">
+                    <Image Source="images/back3.jpg"></Image>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Button Click="Button_Click" Grid.Row="2" Grid.Column="2">Dodaj se zetony +200</Button>
     </Grid>
 </Window>
