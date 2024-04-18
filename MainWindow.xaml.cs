@@ -240,5 +240,9 @@ namespace Unicat_Casino
                 PasswordEnter.Visibility = Visibility.Visible;
             }
         }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
