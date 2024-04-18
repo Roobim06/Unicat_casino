@@ -5,52 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        Title="Menu" Height="1080" Width="1920">
+        Title="Menu" Height="1080" Width="1920"
+        ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None">
     <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Width" Value="600"/>
-            <Setter Property="Height" Value="100"/>
-            <Setter Property="FontSize" Value="40"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Margin" Value="7"/>
-            <!--<Style.Triggers>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="DarkGray"/>
-                </Trigger>
-            </Style.Triggers>-->
+        <Style TargetType="Button" BasedOn="{StaticResource MenuButton}">
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/backgrounds/bg-menu-black.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="images\menu_paypal_me.jpg" Grid.Column="0" Name="MenuUniImg"/>
+        
+        <!--ekran1-->
+        <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Name="MenuUniImg">
+            <TextBlock  FontSize="110" TextAlignment="Center"> Paypal me money</TextBlock>
+            <Image Source="images\uni\uni-menu.png"/>
+        </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
             <Button Content="Ustawienia" Click="ClickSettings" />
-            <Button Content="Wyjście" Click="ClickExit" />
+            <Button Content="Wyjście" Click="ClickExit"/>
         </StackPanel>
 
-        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>
+        
+        <!--ekran2-->
+        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Background="{DynamicResource White}" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+            <Image Source="images/controls/back.png" Width="50" Height="50"/>
+        </Button>
         <StackPanel VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Name="GamesPanel" Grid.Column="0" Grid.ColumnSpan="2" >
             <StackPanel.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="Width" Value="500"/>
-                    <Setter Property="Height" Value="160"/>
-                    <Setter Property="FontSize" Value="40"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="Margin" Value="10"/>
+                <Style TargetType="Button" BasedOn="{StaticResource SelectGameModeButton}">
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="Wybierz Tryb Gry" FontSize="70" Margin="0 0 0 40" HorizontalAlignment="Center"/>
+            <TextBlock Text="Wybierz Tryb Gry" FontSize="70" Margin="0 0 0 40" HorizontalAlignment="Center" />
             <StackPanel Orientation="Horizontal">
-                <Button Click="FilpTheCoinGame" Content="Rzuć monetą"/>
+                <Button Click="FilpTheCoinGame" Content="Rzuć monetą" />
                 <Button Click="OdpalBlackJack" Content="Blackjack"/>
-                <Button Click="OdpalRuletke">Ruletka</Button>
+                <Button Click="OdpalRuletke" Content="Ruletka"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Click="OdpalRollTheDice"> Rzut kostką </Button>
+                <Button Click="OdpalRollTheDice" Content="Rzut kostką"/>
                 <Button></Button>
                 <Button></Button>
             </StackPanel>

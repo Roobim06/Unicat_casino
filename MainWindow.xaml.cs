@@ -58,5 +58,16 @@ namespace Unicat_Casino
             menuWindow.Show();
             this.Close();
         }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz wyjść z programu?", "Prośba o wyjście", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
+
+
     }
 }
