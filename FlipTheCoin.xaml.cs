@@ -34,17 +34,22 @@ namespace Unicat_Casino
         public FlipTheCoin()
         {
             InitializeComponent();
+            Zetony.Maximum = konta.konto.Tokens;
+            betOrzel.IsEnabled = false;
+            betReszka.IsEnabled = false;
         }
 
         private void FlipOrzel(object sender, RoutedEventArgs e)
         {
             znak = 1;
+            konta.UpdateTokens(postawionePieniądze * -1);
             FilpCoin();
         }
 
         private void FlipReszka(object sender, RoutedEventArgs e)
         {
             znak = 0;
+            konta.UpdateTokens(postawionePieniądze * -1);
             FilpCoin();
         }
 
@@ -52,6 +57,13 @@ namespace Unicat_Casino
         {
             betOrzel.IsEnabled = false;
             betReszka.IsEnabled = false;
+            coin.Visibility = Visibility.Collapsed;
+            coinFlip.Visibility = Visibility.Visible;
+            wynik1.Text = "";
+            wynik2.Text = "";
+            betOrzel.IsEnabled = false;
+            betReszka.IsEnabled = false;
+            Zetony.IsEnabled = false;
             coin.Visibility = Visibility.Collapsed;
             coinFlip.Visibility = Visibility.Visible;
             wynik1.Text = "";
@@ -64,13 +76,47 @@ namespace Unicat_Casino
             wynik2.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
 
             coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/coin/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/coin/orzel.png", UriKind.Relative));
+            if(wynikLosowania == znak)
+            {
+                konta.UpdateTokens(Convert.ToInt32(postawionePieniądze * 1.5));
+            }
+            else
+            {
 
+            }
+            postawionePieniądze = 0;
+            Zetony.Value = 1;
             coin.Visibility = Visibility.Visible;
             coinFlip.Visibility = Visibility.Collapsed;
-            betOrzel.IsEnabled = true;
-            betReszka.IsEnabled = true;
+            Zetony.IsEnabled = true;
 
-            //
+
+
+
+        }
+
+        private void Zetony_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Zetony.Maximum = konta.konto.Tokens;
+            postawionePieniądze = Convert.ToInt32(Zetony.Value);
+            zastaw.Content = "Postawione tokeny:" + postawionePieniądze;
+            if(postawionePieniądze != 1)
+            {
+                betOrzel.IsEnabled = true;
+                betReszka.IsEnabled = true;
+            }
+            else
+            {
+                betOrzel.IsEnabled = false;
+                betReszka.IsEnabled = false;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+            okno.Show();
+            this.Close();
         }
     }
 }

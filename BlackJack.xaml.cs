@@ -50,6 +50,7 @@ namespace Unicat_Casino
         {
             InitializeComponent();
             zetony.Content = 0;
+            sliderz.Maximum = konta.konto.Tokens;
         }
         private void firstturn()
         {
@@ -77,8 +78,7 @@ namespace Unicat_Casino
             talia = StworzTalie();
             zetony.Visibility = Visibility.Visible;
             textzetony.Visibility = Visibility.Visible;
-            plus.Visibility = Visibility.Visible;
-            minus.Visibility = Visibility.Visible;
+            sliderz.Visibility = Visibility.Visible;
             zatwierdz.Visibility = Visibility.Visible;
             dobierzkarte.Visibility = Visibility.Collapsed;
             zakonczture.Visibility = Visibility.Collapsed;
@@ -97,7 +97,7 @@ namespace Unicat_Casino
             {
                 foreach (string numer in numery)
                 {
-                    path = "images/cards/" + numer + "_" + symbol + ".png";
+                    path = "images/cards/" + numer + "_" + symbol + ".jpg";
                     talia.Add(new karty(symbol, numer, path, true));
                 }
             }
@@ -116,6 +116,7 @@ namespace Unicat_Casino
                 {
                     tokens = tokens * 2;
                     reset.Text = "Wygrałes " + tokens + " zetonow\n grasz od nowa?";
+                    konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
                     zakonczture.IsEnabled = false;
@@ -130,6 +131,7 @@ namespace Unicat_Casino
                 else if(playerpoints == dealerpoints)
                 {
                     reset.Text = "Remis, twoje zetony wracaja do ciebie\n grasz od nowa?";
+                    konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
                     zakonczture.IsEnabled = false;
@@ -172,6 +174,7 @@ namespace Unicat_Casino
             {
                 tokens = Convert.ToInt32(tokens * 1.5);
                 reset.Text = "Blackjack! Wygrywasz " + tokens + " zetonow\n grasz od nowa?";
+                konta.UpdateTokens(tokens);
                 end = true;
                 dobierzkarte.IsEnabled = false;
                 zakonczture.IsEnabled = false;
@@ -223,6 +226,7 @@ namespace Unicat_Casino
             {
                 tokens = Convert.ToInt32(tokens * 2);
                 reset.Text = "Dealer przegral! Wygrywasz " + tokens + " zetonow\n grasz od nowa?";
+                konta.UpdateTokens(tokens);
                 end = true;
                 dobierzkarte.IsEnabled = false;
                 zakonczture.IsEnabled = false;
@@ -238,7 +242,7 @@ namespace Unicat_Casino
             {
                 if(karta.odkryte == false)
                 {
-                    imagePaths.Add("/images/back.png");
+                    imagePaths.Add("/images/back"+konta.konto.cardback+".jpg");
                 }
                 else
                 {
@@ -263,7 +267,7 @@ namespace Unicat_Casino
             {
                 if (karta.odkryte == false)
                 {
-                    imagePaths.Add("/images/back.png");
+                    imagePaths.Add("/images/back"+konta.konto.cardback+".jpg");
                 }
                 else
                 {
@@ -358,47 +362,9 @@ namespace Unicat_Casino
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+            okno.Show();
             this.Close();
-        }
-
-        private void plus_Click(object sender, RoutedEventArgs e)
-        {
-            if(tokens >= 2000)
-            {
-                minus.IsEnabled = true;
-                plus.IsEnabled = false;
-                zatwierdz.IsEnabled = true;
-            }
-            else
-            {
-                tokens += 10;
-                updatetokens();
-                minus.IsEnabled = true;
-                plus.IsEnabled = true;
-                zatwierdz.IsEnabled = true;
-            }
-        }
-
-        private void minus_Click(object sender, RoutedEventArgs e)
-        {
-            if(tokens == 0)
-            {
-                minus.IsEnabled = false;
-                plus.IsEnabled = true;
-                zatwierdz.IsEnabled = false;
-            }
-            else{
-                tokens -= 10;
-                updatetokens();
-                minus.IsEnabled = true;
-                plus.IsEnabled = true;
-                zatwierdz.IsEnabled = true;
-                if (tokens == 0)
-                {
-                    zatwierdz.IsEnabled = false; 
-                    minus.IsEnabled = false;
-                }
-            }
         }
         private void updatetokens()
         {
@@ -409,14 +375,21 @@ namespace Unicat_Casino
         {
             zetony.Visibility = Visibility.Collapsed;
             textzetony.Visibility = Visibility.Collapsed;
-            plus.Visibility = Visibility.Collapsed;
-            minus.Visibility = Visibility.Collapsed;
+            sliderz.Visibility = Visibility.Collapsed;
             zatwierdz.Visibility = Visibility.Collapsed;
             dobierzkarte.Visibility = Visibility.Visible;
             zakonczture.Visibility = Visibility.Visible;
             playertable.Visibility = Visibility.Visible;
             dealertable.Visibility = Visibility.Visible;
+            konta.UpdateTokens(tokens * -1);
             firstturn();
+        }
+
+        private void sliderz_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            sliderz.Maximum = konta.konto.Tokens;
+            tokens = Convert.ToInt32(sliderz.Value);
+            updatetokens();
         }
     }
 }

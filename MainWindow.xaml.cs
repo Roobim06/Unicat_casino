@@ -1,5 +1,10 @@
-﻿using System.Text;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Security.Cryptography;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -13,9 +18,27 @@ namespace Unicat_Casino
 {
     public partial class MainWindow : Window
     {
+        string connectionString = "Data Source=(local);Initial Catalog=UniCatCasino_BaziaDanych;Integrated Security=True; TrustServerCertificate=True";
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+        static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                // Compute hash from the password
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Convert byte array to a string representation
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2")); // Convert to hexadecimal format
+                }
+                return builder.ToString();
+            }
         }
 
         private void Login(object sender, RoutedEventArgs e)
@@ -27,11 +50,41 @@ namespace Unicat_Casino
              * sprawdzanie warunku haslo = dane wpisane przez uzytkownika
              * jesi wszystko dobrze to okno jest zamykane i przechodziny do menu window
              */
+            bool loggedin = false;
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                string query = "SELECT Nick, Tokens FROM [User] WHERE CONVERT(varchar(max), Nick) = @Nick AND CONVERT(varchar(max), Password) = @Password;";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Nick", NickLog.Text);
+                command.Parameters.AddWithValue("@Password", HashPassword(PassLog.Password));
+                SqlDataReader reader = command.ExecuteReader();
 
-
-            Menu menuWindow = new Menu();
-            menuWindow.Show();
-            this.Close();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        MessageBox.Show("Udało sie zalogowac","Pomyslne zalogowanie");
+                        konta.konto = new User(Convert.ToString(reader["Nick"]), Convert.ToInt32(reader["Tokens"]));
+                        loggedin = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Błedne dane wprowadzone.", "Information");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+            }
+            if (loggedin)
+            {
+                Menu menuWindow = new Menu();
+                menuWindow.Show();
+                this.Close();
+            }
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
@@ -54,20 +107,138 @@ namespace Unicat_Casino
              * tworzenie uzytkownika i zapis jego danych lokalnie
              * jesi wszystko dobrze to okno jest zamykane i przechodziny do menu window
              */
-            Menu menuWindow = new Menu();
-            menuWindow.Show();
-            this.Close();
-        }
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz wyjść z programu?", "Prośba o wyjście", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+            if(EmailEnter.Foreground == Brushes.Red||PasswordEnter.Foreground == Brushes.Red)
             {
-                Application.Current.Shutdown();
+                MessageBox.Show("Email lub hasło nie jest poprawne", "Information");
+            }
+            else
+            {
+                bool emailtaken = false;
+                bool nicktaken = false;
+                bool loggedin = false;
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    connection.Open();
+                    string query = "SELECT * FROM [User]";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (EmailEnter.Text == Convert.ToString(reader["Email"]))
+                        {
+                            emailtaken = true;
+                        }
+                        if (NickEnter.Text == Convert.ToString(reader["Nick"]))
+                        {
+                            nicktaken = true;
+                        }
+                    }
+                    reader.Close();
+                    if (emailtaken)
+                    {
+                        MessageBox.Show("Email jest juz wykorzystany");
+                    }
+                    else if (nicktaken)
+                    {
+                        MessageBox.Show("Nick jest juz wykorzystany");
+                    }
+                    else
+                    {
+                        query = "insert into[dbo].[User] values('" + NickEnter.Text + "', '" + EmailEnter.Text + "', '" + HashPassword(PasswordEnter.Password) + "', 200)";
+                        command = new SqlCommand(query, connection);
+                        reader = command.ExecuteReader();
+                        MessageBox.Show("Założono konto");
+                        konta.konto = new User(NickEnter.Text, 200);
+                        loggedin = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Wystąpił błąd: {ex.Message}", "Błąd");
+                }
+                if (loggedin)
+                {
+                    Menu menuWindow = new Menu();
+                    menuWindow.Show();
+                    this.Close();
+                }
+            }   
+        }
+
+        private void EmailEnter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (Regex.IsMatch(textBox.Text, "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"))
+            {
+                ToolTipService.SetToolTip(textBox, null);
+                textBox.Foreground = Brushes.Black;
+            }
+            else
+            {
+                ToolTip tooltip = new ToolTip();
+                tooltip.Content = "Musi byc prawdziwy email";
+                ToolTipService.SetToolTip(textBox, tooltip);
+                textBox.Foreground = Brushes.Red;
             }
         }
 
 
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PassReset okno = new PassReset();
+            okno.Show();
+            this.Close();
+        }
+        private void PasswordEnter_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordBox textBox = sender as PasswordBox;
+            if (Regex.IsMatch(textBox.Password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"))
+            {
+                ToolTipService.SetToolTip(textBox, null);
+                textBox.Foreground = Brushes.Black;
+            }
+            else
+            {
+                ToolTip tooltip = new ToolTip();
+                tooltip.Content = "Hasło musi posiadac 1 duza litere, 1 liczbe, 1 znak specialny i 8 znakow";
+                ToolTipService.SetToolTip(textBox, tooltip);
+                textBox.Foreground = Brushes.Red;
+            }
+        }
 
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox checks = sender as CheckBox;
+            if (checks.IsChecked == true)
+            {
+                Passlog2.Text = PassLog.Password;
+                PassLog.Visibility = Visibility.Collapsed;
+                Passlog2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PassLog.Password = Passlog2.Text;
+                Passlog2.Visibility = Visibility.Collapsed;
+                PassLog.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void CheckBox_Click_1(object sender, RoutedEventArgs e)
+        {
+            CheckBox checks = sender as CheckBox;
+            if (checks.IsChecked == true)
+            {
+                PasswordEnter2.Text = PasswordEnter.Password;
+                PasswordEnter.Visibility = Visibility.Collapsed;
+                PasswordEnter2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PasswordEnter.Password = PasswordEnter2.Text;
+                PasswordEnter2.Visibility = Visibility.Collapsed;
+                PasswordEnter.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

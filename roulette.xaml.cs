@@ -11,13 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading.Tasks;
+using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Unicat_Casino;
 
 namespace Ruletka
 {
     /// <summary>
     /// Logika interakcji dla klasy roulette.xaml
     /// </summary>
-    public partial class roulette : Window
+    /// heehehehe
+    public partial class roulette : System.Windows.Window
     {
         string currentbet = "";
         int postawionezetony = 0;
@@ -32,6 +37,7 @@ namespace Ruletka
         public roulette()
         {
             InitializeComponent();
+            sliderzetony.Maximum = konta.konto.Tokens;
         }
         private void updateinfo()
         {
@@ -40,7 +46,14 @@ namespace Ruletka
 
         private void table_Click(object sender, RoutedEventArgs e)
         {
-            var objekt = (sender as Button);
+            if(konta.konto.Tokens == 0)
+            {
+                MessageBox.Show("nie stac cie biedaku");
+                Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+                okno.Show();
+                this.Close();
+            }
+            var objekt = (sender as System.Windows.Controls.Button);
             currentbet = objekt.Name;
             zaklad = objekt.Uid;
             updateinfo();
@@ -48,12 +61,13 @@ namespace Ruletka
 
         private void sliderzetony_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            sliderzetony.Maximum = konta.konto.Tokens;
             postawionezetony = Convert.ToInt32(sliderzetony.Value);
             żetony.Content = postawionezetony;
         }
         private void handlewin()
         {
-            if(win)
+            if (win)
             {
                 wygranezetony = postawionezetony * przelicznik;
                 if (evenoddwin)
@@ -61,6 +75,7 @@ namespace Ruletka
                     wygranezetony += 1;
                 }
                 MessageBox.Show("Gratulacje! wygrales " + wygranezetony + " zetonow");
+                konta.UpdateTokens(wygranezetony);
             }
             else
             {
@@ -78,21 +93,45 @@ namespace Ruletka
             sliderzetony.Value = 0;
             info.Content = "Jeszcze nic nie postawiono";
         }
-
-        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void ShowGif()
         {
-            if(postawionezetony == 0 || currentbet == "")
+            spin.Visibility = Visibility.Visible;
+            nospin.Visibility = Visibility.Collapsed;
+        }
+
+        private void HideGif()
+        {
+            nospin.Visibility = Visibility.Visible;
+            spin.Visibility = Visibility.Collapsed;
+        }
+        private async void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (postawionezetony == 0 || currentbet == "")
             {
                 MessageBox.Show("Postaw zaklad");
             }
             else
             {
+                konta.UpdateTokens(postawionezetony * -1);
+                ShowGif();
+                sliderzetony.IsEnabled = false;
+                temp.IsEnabled = false;
+                await Task.Delay(5000);
+                HideGif();
+                temp.IsEnabled = true;
+                sliderzetony.IsEnabled = true;
                 Random rand = new Random();
-                wylosowanaliczba= rand.Next(0, 37);
-                MessageBox.Show("Wypadła liczba " + wylosowanaliczba);
-                if(zaklad == "first 12")
+                int wylosowanaliczba = rand.Next(0, 37);
+                string imageName = "roulettewheel_" + wylosowanaliczba + ".png";
+                string imagePath = "images\\roulette\\" + imageName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                nospin.Source = bitmap;
+                if (zaklad == "first 12")
                 {
-                    if(wylosowanaliczba >=1 && wylosowanaliczba <= 12)
+                    if (wylosowanaliczba >= 1 && wylosowanaliczba <= 12)
                     {
                         win = true;
                         przelicznik = 2;
@@ -154,7 +193,7 @@ namespace Ruletka
                 }
                 else if (zaklad == "odd")
                 {
-                    if (wylosowanaliczba%2 == 1)
+                    if (wylosowanaliczba % 2 == 1)
                     {
                         win = true;
                         evenoddwin = true;
@@ -242,7 +281,7 @@ namespace Ruletka
                 }
                 else if (zaklad == "10-12")
                 {
-                    if (wylosowanaliczba >= 10 && wylosowanaliczba <=12)
+                    if (wylosowanaliczba >= 10 && wylosowanaliczba <= 12)
                     {
                         win = true;
                         przelicznik = 11;
@@ -350,7 +389,7 @@ namespace Ruletka
                 }
                 else
                 {
-                    if(wylosowanaliczba == Convert.ToInt32(zaklad))
+                    if (wylosowanaliczba == Convert.ToInt32(zaklad))
                     {
                         win = true;
                         przelicznik = 35;
@@ -362,6 +401,13 @@ namespace Ruletka
                 }
                 handlewin();
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
+            okno.Show();
+            this.Close();
         }
     }
 }

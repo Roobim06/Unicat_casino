@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-        Title="Menu" Height="1080" Width="1920"
-        ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None">
+        Title="Menu" WindowState="Maximized"
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource MenuButton}">
         </Style>
@@ -28,6 +28,7 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
             <Button Content="Ustawienia" Click="ClickSettings" />
+            <Button Content="Wyloguj" Click="ClickLog" />
             <Button Content="Wyjście" Click="ClickExit"/>
         </StackPanel>
 
@@ -58,6 +59,11 @@
                 <Button></Button>
             </StackPanel>
         </StackPanel>
+        <StackPanel x:Name="Datacontexthere" Grid.Row="0" Grid.Column="100" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,10,0">
+            <Label FontSize="20" Content="Witaj" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Label FontSize="20" Content="{Binding Nick}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Label FontSize="20" Content="Twoje saldo:" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Label FontSize="20" Content="{Binding Tokens}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </StackPanel>
     </Grid>
-
 </Window>
