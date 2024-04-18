@@ -25,7 +25,14 @@ namespace Unicat_Casino
 
         private void ClickExit(object sender, RoutedEventArgs e)
         {
-            konta.konto = null;
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz wyjść z programu?", "Prośba o wyjście", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+        private void ClickLog(object sender, RoutedEventArgs e){
+          konta.konto = null;
             MainWindow okno = new MainWindow();
             okno.Show();
             this.Close();
@@ -46,14 +53,13 @@ namespace Unicat_Casino
 
         }
 
-        private void ClickCancelButton(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e) 
         {
             MenuUniImg.Visibility = Visibility.Visible;
             MainMenu.Visibility = Visibility.Visible;
 
             GamesPanel.Visibility = Visibility.Collapsed;
             CancelButton.Visibility = Visibility.Collapsed;
-
         }
 
         private void FilpTheCoinGame(object sender, RoutedEventArgs e)
@@ -75,5 +81,12 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
+
+        private void OdpalRollTheDice(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

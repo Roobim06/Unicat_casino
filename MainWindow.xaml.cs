@@ -190,7 +190,6 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
-
         private void PasswordEnter_PasswordChanged(object sender, RoutedEventArgs e)
         {
             PasswordBox textBox = sender as PasswordBox;

@@ -9,22 +9,11 @@
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button">
-            
         </Style>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Button Click="Button_Click_1">X</Button>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+    <Grid Background="Blue">
+<Button Click="Button_Click_1">X</Button>
+        <StackPanel Orientation="Vertical">
             <TextBlock>Wybierz tył kart</TextBlock>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="uno" Width="200" Uid="1" Click="Button_Click_2" IsEnabled="false">
@@ -38,6 +27,27 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <Button Click="Button_Click" Grid.Row="2" Grid.Column="2">Dodaj se zetony +200</Button>
+        <Button Click="Button_Click">Dodaj se zetony +200</Button>
+        ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None">
+        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource White}">
+            <Image Source="images/controls/back.png" Width="50" Height="50"/>
+        </Button>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Zmień ustawienia aplikacji" FontSize="18"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <RadioButton Name="BlackMode1" Content="Ciemny motyw (1)" IsChecked="True" GroupName="themesSelection" Checked="DarkMode_Checked" />
+                    <RadioButton Name="LightMode1" Content="Jasny motyw (1)" GroupName="themesSelection" Checked="LightMode_Checked" />
+                    <Button Click="ChangeTheme_Click" Content="Zmiana motywu" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="Zmień ustawienia aplikacji"  FontSize="18"/>
+                    <CheckBox Name="MuteMusicCheckbox" Content="Wycisz muzykę" Checked="MuteMusic"/>
+                    <Button Click="MuteMusic_Click" Content="Wycisz muzykę"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

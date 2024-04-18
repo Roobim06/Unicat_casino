@@ -13,7 +13,6 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="/images/coin/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
             <Image Width="400" Height="400" HorizontalAlignment="Center" Name="coinFlip" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/coin/flip.gif" />
-
             <TextBlock Text="Rzuć monetą" FontSize="40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Orzeł" Click="FlipOrzel" Name="betOrzel"/>
@@ -24,7 +23,5 @@
             <Label x:Name="zastaw">Postawione tokeny:0</Label>
             <Slider Minimum="1" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Zetony" ValueChanged="Zetony_ValueChanged"></Slider>
         </StackPanel>
-
-
     </Grid>
 </Window>

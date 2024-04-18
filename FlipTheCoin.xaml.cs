@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -16,6 +17,10 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Drawing;
 using static System.Net.Mime.MediaTypeNames;
+using System;
+using System.Windows.Media.Animation;
+using WpfAnimatedGif;
+using System.Windows.Threading;
 
 namespace Unicat_Casino
 {
@@ -50,7 +55,12 @@ namespace Unicat_Casino
 
         private async void FilpCoin()
         {
-
+            betOrzel.IsEnabled = false;
+            betReszka.IsEnabled = false;
+            coin.Visibility = Visibility.Collapsed;
+            coinFlip.Visibility = Visibility.Visible;
+            wynik1.Text = "";
+            wynik2.Text = "";
             betOrzel.IsEnabled = false;
             betReszka.IsEnabled = false;
             Zetony.IsEnabled = false;
