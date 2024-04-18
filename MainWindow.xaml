@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
-       Title="MainWindow" Height="1080" Width="1920">
-    <!--WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize"-->
+        Title="MainWindow" Height="1080" Width="1920"
+        ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/backgrounds/bg-login-black.jpg"/>
+        </Grid.Background>
         <DockPanel VerticalAlignment="Center">
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Name="LoginPanel">
                 <TextBlock Text="Nazwa użytkownika" FontSize="20" Margin="10"/>
@@ -18,10 +21,9 @@
                     <TextBlock Text="Zarejestruj się" FontSize="20" Margin="10"  MouseDown="Register_Click" Cursor="Hand"/>
                     <TextBlock Text="Nie pamiętam hasła" Cursor="Hand" FontSize="20" Margin="10"/>
                 </StackPanel>
-                <Button Click="Login">Zaloguj się</Button>
+                <Button Click="Login" Content="Zaloguj się"/>
+                <Button Click="Exit" Content="Wyjdź"/>
             </StackPanel>
-
-
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"  Visibility="Collapsed" Name="RegisterPanel">
                 <TextBlock Text="Nazwa użytkownika" FontSize="20" Margin="10"/>
                 <TextBox Width="400" Height="60"/>
@@ -30,7 +32,8 @@
                 <TextBlock Text="Hasło" FontSize="20" Margin="10"/>
                 <TextBox Width="400" Height="60"/>
                 <TextBlock Text="Zaloguj się" FontSize="20" Margin="10"  MouseDown="Login_Click" Cursor="Hand"/>
-                <Button Click="Register">Zarejestruj się</Button>
+                <Button Click="Register" Content="Zarejestruj się"/>
+                <Button Click="Exit" Content="Wyjdź"/>
             </StackPanel>
         </DockPanel>
     </Grid>
