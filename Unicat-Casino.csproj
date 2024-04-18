@@ -125,7 +125,6 @@
     <None Remove="images\coin\flip.gif" />
     <None Remove="images\coin\orzel.png" />
     <None Remove="images\coin\reszka.png" />
-    <None Remove="images\menu_paypal_me.jpg" />
     <None Remove="images\coin\flip2.gif" />
     <None Remove="images\coin\flip2nobg.gif" />
     <None Remove="images\controls\back.png" />
@@ -175,7 +174,6 @@
     <None Remove="images\roulette\roulettewheel_7.png" />
     <None Remove="images\roulette\roulettewheel_8.png" />
     <None Remove="images\roulette\roulettewheel_9.png" />
-    <None Remove="images\Unico.jpg" />
     <None Remove="images\uni\uni-menu.png" />
     <None Remove="images\uni\Unico.jpg" />
   </ItemGroup>
@@ -321,7 +319,6 @@
     <Resource Include="images\coin\flip.gif" />
     <Resource Include="images\coin\orzel.png" />
     <Resource Include="images\coin\reszka.png" />
-    <Resource Include="images\menu_paypal_me.jpg" />
     <Resource Include="images\ocena.png" />
     <Resource Include="images\roulettewheel.png" />
     <Resource Include="images\roulette\roulettewheel_0.png" />
@@ -359,7 +356,6 @@
     <Resource Include="images\roulette\roulettewheel_6.png" />
     <Resource Include="images\roulette\roulettewheel_7.png" />
     <Resource Include="images\roulette\roulettewheel_9.png" />
-    <Resource Include="images\Unico.jpg" />
     <Resource Include="images\coin\flip2.gif" />
     <Resource Include="images\coin\flip2nobg.gif" />
     <Resource Include="images\coin\orzel.png" /> 
