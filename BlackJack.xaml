@@ -9,8 +9,33 @@
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
         <Style TargetType="Button"></Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White"
+                                  ShadowDepth="0"
+                                  BlurRadius="15"
+                                  RenderingBias="Quality"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White"
+                                  ShadowDepth="0"
+                                  BlurRadius="3"
+                                  RenderingBias="Quality"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid x:Name="maingrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="images/pokertable_uni.png"></ImageBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -29,13 +54,14 @@
         </WrapPanel>
         <Button x:Name="dobierzkarte" Grid.Row="4" Click="Button_Click" Visibility="Collapsed">Dobierz karte</Button>
         <Button x:Name="zakonczture" Grid.Row="4" Grid.Column="2" Click="Button_Click_1" Visibility="Collapsed">Zakoncz ture</Button>
-        <TextBlock Grid.Row="0" Grid.Column="1" Visibility="Collapsed" x:Name="reset" Background="white">Zagraj ponownie?</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Visibility="Collapsed" x:Name="reset" Foreground="Black" FontSize="20">Zagraj ponownie?</TextBlock>
         <Button Click="Button_Click_2" Grid.Row="2" Grid.Column="1" Width="450" HorizontalAlignment="Left" Visibility="Collapsed" x:Name="resettak">Tak</Button>
         <Button Click="Button_Click_3" Grid.Row="2" Grid.Column="1" Width="450" HorizontalAlignment="Right" Visibility="Collapsed" x:Name="resetnie">Nie</Button>
-        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="textzetony" Background="White">Podaj ile żetonów chcesz postawic</TextBlock>
-        <Label Grid.Row="2" Grid.Column="1" x:Name="zetony" Content="{Binding tokens}" Background="White"></Label>
-        <Button Grid.Row="2" Grid.Column="2" x:Name="plus" Click="plus_Click">+</Button>
-        <Button Grid.Row="2" Grid.Column="0" x:Name="minus" Click="minus_Click" IsEnabled="False">-</Button>
-        <Button Grid.Row="3" Grid.Column="1" x:Name="zatwierdz" Click="zatwierdz_Click" IsEnabled="False">Postaw</Button>
+        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="textzetony" Foreground="Black" FontSize="20" >Podaj ile żetonów chcesz postawic</TextBlock>
+        <Label Grid.Row="2" Grid.Column="1" x:Name="zetony" Content="{Binding tokens}" Foreground="Black" FontSize="20" HorizontalAlignment="Center"></Label>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Slider Minimum="1" x:Name="sliderz" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="sliderz_ValueChanged"></Slider>
+            <Button x:Name="zatwierdz" Click="zatwierdz_Click" Height="100" Width="200" VerticalAlignment="Center">Postaw</Button>
+        </StackPanel>
     </Grid>
 </Window>

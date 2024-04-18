@@ -102,10 +102,10 @@ namespace Unicat_Casino
                 if (foundmail)
                 {
                     code = GenerateRandomUpperCaseLetters();
-                    string email = "damig@onet.pl";
+                    string emailsend = "damig@onet.pl";
                     string password = "45*54(qwer";
                     var message = new MimeMessage();
-                    message.From.Add(new MailboxAddress("Resetowanie hasla", email));
+                    message.From.Add(new MailboxAddress("Resetowanie hasla", emailsend));
                     message.To.Add(new MailboxAddress("Odbiorca", email));
                     message.Subject = "Resetowanie hasła";
                     Random random = new Random();
@@ -115,7 +115,7 @@ namespace Unicat_Casino
                     };
                     using var client = new SmtpClient();
                     client.Connect("smtp.poczta.onet.pl", 587, false);
-                    client.Authenticate(email, password);
+                    client.Authenticate(emailsend, password);
                     client.Send(message);
                     client.Disconnect(true);
                     stage1.Visibility = Visibility.Collapsed;

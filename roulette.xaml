@@ -12,8 +12,35 @@
         <Style TargetType="Button">
 
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White"
+                              ShadowDepth="0"
+                              BlurRadius="15"
+                              RenderingBias="Quality"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White"
+                              ShadowDepth="0"
+                              BlurRadius="3"
+                              RenderingBias="Quality"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/roulette.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
@@ -27,7 +54,7 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="nospin" Source="images/roulettewheel.png" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp" Stretch="Uniform"></Image>
         <Image x:Name="spin" gif:ImageBehavior.AnimatedSource="images/roulettewheelspin.gif" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"></Image>
-        <Grid Grid.Row="1" Grid.Column="2">
+        <Grid Grid.Row="1" Grid.Column="2" x:Name="temp">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>

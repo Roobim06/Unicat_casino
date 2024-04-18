@@ -115,8 +115,11 @@ namespace Ruletka
                 konta.UpdateTokens(postawionezetony * -1);
                 ShowGif();
                 sliderzetony.IsEnabled = false;
+                temp.IsEnabled = false;
                 await Task.Delay(5000);
                 HideGif();
+                temp.IsEnabled = true;
+                sliderzetony.IsEnabled = true;
                 Random rand = new Random();
                 int wylosowanaliczba = rand.Next(0, 37);
                 string imageName = "roulettewheel_" + wylosowanaliczba + ".png";

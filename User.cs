@@ -17,6 +17,7 @@ namespace Unicat_Casino
         {
             this.Nick = Nick;
             this.Tokens = Tokens;
+            cardback = 1;
         }
     }
     public static class konta

@@ -123,6 +123,8 @@
     <None Remove="images\coin\reszka.png" />
     <None Remove="images\menu_paypal_me.jpg" />
     <None Remove="images\ocena.png" />
+    <None Remove="images\pokertable_uni.png" />
+    <None Remove="images\roulette.png" />
     <None Remove="images\roulettewheel.png" />
     <None Remove="images\roulettewheelspin.gif" />
     <None Remove="images\roulette\roulettewheel_0.png" />
@@ -221,6 +223,8 @@
     <Resource Include="images\cards\Q_kier.jpg" />
     <Resource Include="images\cards\Q_pik.jpg" />
     <Resource Include="images\cards\Q_trefl.jpg" />
+    <Resource Include="images\pokertable_uni.png" />
+    <Resource Include="images\roulette.png" />
     <Resource Include="images\roulettewheelspin.gif" />
     <Resource Include="images\roulette\roulettewheel_8.png" />
     <Resource Include="images\roulette\roulettewheel_3.png" />
