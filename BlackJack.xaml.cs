@@ -51,6 +51,7 @@ namespace Unicat_Casino
             InitializeComponent();
             zetony.Content = 0;
             sliderz.Maximum = konta.konto.Tokens;
+
         }
         private void firstturn()
         {
@@ -373,6 +374,13 @@ namespace Unicat_Casino
 
         private void zatwierdz_Click(object sender, RoutedEventArgs e)
         {
+            if (konta.konto.Tokens == 0)
+            {
+                MessageBox.Show("nie stac cie biedaku");
+                Menu okno = new Menu();
+                okno.Show();
+                this.Close();
+            }
             zetony.Visibility = Visibility.Collapsed;
             textzetony.Visibility = Visibility.Collapsed;
             sliderz.Visibility = Visibility.Collapsed;
