@@ -10,10 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\back.png" />
-    <None Remove="images\back1.jpg" />
-    <None Remove="images\back2.jpg" />
-    <None Remove="images\back3.jpg" />
+    <None Remove="images\cards\back.png" />
+    <None Remove="images\cards\back1.jpg" />
+    <None Remove="images\cards\back2.jpg" />
+    <None Remove="images\cards\back3.jpg" />
     <None Remove="images\cards\10_karo.jpg" />
     <None Remove="images\backgrounds\bg-login-black.jpg" />
     <None Remove="images\backgrounds\bg-login-white.jpg" />
@@ -141,10 +141,9 @@
     <None Remove="images\files\reszka.png" />
     <None Remove="images\uni\menu_paypal_me.jpg" />
     <None Remove="images\ocena.png" />
-    <None Remove="images\pokertable_uni.png" />
-    <None Remove="images\roulette.png" />
-    <None Remove="images\roulettewheel.png" />
-    <None Remove="images\roulettewheelspin.gif" />
+    <None Remove="images\background\pokertable_uni.png" />
+    <None Remove="images\roulette\roulettewheel.png" />
+    <None Remove="images\roulette\roulettewheelspin.gif" />
     <None Remove="images\roulette\roulettewheel_0.png" />
     <None Remove="images\roulette\roulettewheel_1.png" />
     <None Remove="images\roulette\roulettewheel_10.png" />
@@ -197,8 +196,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\back2.jpg" />
-    <Resource Include="images\back3.jpg" />
+    <Resource Include="images\cards\back2.jpg" />
+    <Resource Include="images\cards\back3.jpg" />
     <Resource Include="images\cards\9_pik.png" />
     <Resource Include="images\cards\5_trefl.jpg" />
     <Resource Include="images\cards\Q_karo.jpg" />
@@ -255,9 +254,8 @@
     <Resource Include="images\dice\6_dice.png" />
     <Resource Include="images\dice\dice.png" />
     <Resource Include="images\dice\roll.gif" />
-    <Resource Include="images\pokertable_uni.png" />
-    <Resource Include="images\roulette.png" />
-    <Resource Include="images\roulettewheelspin.gif" />
+    <Resource Include="images\backgrounds\pokertable_uni.png" />
+    <Resource Include="images\roulette\roulettewheelspin.gif" />
     <Resource Include="images\roulette\roulettewheel_8.png" />
     <Resource Include="images\roulette\roulettewheel_3.png" />
   </ItemGroup>
@@ -285,8 +283,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\back1.jpg" />
-    <Resource Include="images\back.png" />
+    <Resource Include="images\cards\back1.jpg" />
+    <Resource Include="images\cards\back.png" />
     <Resource Include="images\cards\10_karo.png" />
     <Resource Include="images\cards\10_kier.png" />
     <Resource Include="images\cards\10_pik.png" />
@@ -340,8 +338,7 @@
     <Resource Include="images\coin\flip.gif" />
     <Resource Include="images\coin\orzel.png" />
     <Resource Include="images\coin\reszka.png" />
-    <Resource Include="images\ocena.png" />
-    <Resource Include="images\roulettewheel.png" />
+    <Resource Include="images\roulette\roulettewheel.png" />
     <Resource Include="images\roulette\roulettewheel_0.png" />
     <Resource Include="images\roulette\roulettewheel_1.png" />
     <Resource Include="images\roulette\roulettewheel_10.png" />
@@ -383,8 +380,7 @@
     <Resource Include="images\coin\reszka.png" /> 
     <Resource Include="images\controls\back.png" />
     <Resource Include="images\uni\menu_paypal_me.jpg" />
-    <Resource Include="images\ocena.png" />
-    <Resource Include="images\roulettewheel.png" />
+    <Resource Include="images\roulette\roulettewheel.png" />
     <Resource Include="images\uni\uni-menu.png" />
     <Resource Include="images\uni\uni.png" />
     <Resource Include="images\uni\uni2.png" />
