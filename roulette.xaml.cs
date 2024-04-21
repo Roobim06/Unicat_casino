@@ -32,7 +32,7 @@ namespace Ruletka
         bool evenoddwin = false;
         int wygranezetony = 0;
         bool win = false;
-        int[] reds = [32, 4, 21, 25, 34, 27, 56, 30, 23, 5, 16, 1, 14, 9, 18, 7, 12, 3];
+        int[] reds = [32, 4, 21, 25, 34, 27, 36, 30, 23, 5, 16, 1, 14, 9, 18, 7, 12, 3];
         int[] blacks = [15, 19, 2, 17, 6, 13, 11, 8, 10, 24, 33, 20, 31, 22, 29, 28, 35, 26];
         public roulette()
         {

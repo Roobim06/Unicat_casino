@@ -251,5 +251,13 @@ namespace Unicat_Casino
             this.Close();
         }
 
+
+        private void Zaloguj_gosc(object sender, RoutedEventArgs e)
+        {
+            konta.konto = new User("Guest",200);
+            Menu menuWindow = new Menu();
+            menuWindow.Show();
+            this.Close();
+        }
     }
 }

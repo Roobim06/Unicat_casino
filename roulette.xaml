@@ -9,9 +9,49 @@
         Title="Ruletka" WindowState="Maximized"
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
-        <Style TargetType="Button">
-
+        <Style x:Key="Red" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Red" CornerRadius="100">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
+        <Style x:Key="Green" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="LimeGreen" CornerRadius="100">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Key="Black" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Black" CornerRadius="100">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="20"/>
@@ -78,64 +118,64 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="zero" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Click="table_Click" Uid="0">0</Button>
-            <Button x:Name="jeden" Grid.Row="3" Grid.Column="1" Click="table_Click" Uid="1">1</Button>
-            <Button x:Name="dwa" Grid.Row="2" Grid.Column="1" Click="table_Click" Uid="2">2</Button>
-            <Button x:Name="trzy" Grid.Row="1" Grid.Column="1" Click="table_Click" Uid="3">3</Button>
-            <Button x:Name="cztery" Grid.Row="3" Grid.Column="2" Click="table_Click" Uid="4">4</Button>
-            <Button x:Name="piec" Grid.Row="2" Grid.Column="2" Click="table_Click" Uid="5">5</Button>
-            <Button x:Name="szesc" Grid.Row="1" Grid.Column="2" Click="table_Click" Uid="6">6</Button>
-            <Button x:Name="siedem" Grid.Row="3" Grid.Column="3" Click="table_Click" Uid="7">7</Button>
-            <Button x:Name="osiem" Grid.Row="2" Grid.Column="3" Click="table_Click" Uid="8">8</Button>
-            <Button x:Name="dziewiec" Grid.Row="1" Grid.Column="3" Click="table_Click" Uid="9">9</Button>
-            <Button x:Name="dziesiec" Grid.Row="3" Grid.Column="4" Click="table_Click" Uid="10">10</Button>
-            <Button x:Name="jedenascie" Grid.Row="2" Grid.Column="4" Click="table_Click" Uid="11">11</Button>
-            <Button x:Name="dwanascie" Grid.Row="1" Grid.Column="4" Click="table_Click" Uid="12">12</Button>
-            <Button x:Name="trzynascie" Grid.Row="3" Grid.Column="5" Click="table_Click" Uid="13">13</Button>
-            <Button x:Name="czternascie" Grid.Row="2" Grid.Column="5" Click="table_Click" Uid="14">14</Button>
-            <Button x:Name="pietnascie" Grid.Row="1" Grid.Column="5" Click="table_Click" Uid="5">15</Button>
-            <Button x:Name="szesnascie" Grid.Row="3" Grid.Column="6" Click="table_Click" Uid="16">16</Button>
-            <Button x:Name="siedemnascie" Grid.Row="2" Grid.Column="6" Click="table_Click" Uid="17">17</Button>
-            <Button x:Name="osiemnascie" Grid.Row="1" Grid.Column="6" Click="table_Click" Uid="18">18</Button>
-            <Button x:Name="dziewietnascie" Grid.Row="1" Grid.Column="7" Click="table_Click" Uid="19">19</Button>
-            <Button x:Name="dwadziescia" Grid.Row="2" Grid.Column="7" Click="table_Click" Uid="20">20</Button>
-            <Button x:Name="dwadziescia_jeden" Grid.Row="3" Grid.Column="7" Click="table_Click" Uid="21">21</Button>
-            <Button x:Name="dwadziescia_dwa" Grid.Row="1" Grid.Column="8" Click="table_Click" Uid="22">22</Button>
-            <Button x:Name="dwadziescia_trzy" Grid.Row="2" Grid.Column="8" Click="table_Click" Uid="23">23</Button>
-            <Button x:Name="dwadziescia_cztery" Grid.Row="3" Grid.Column="8" Click="table_Click" Uid="24">24</Button>
-            <Button x:Name="dwadziescia_piec" Grid.Row="1" Grid.Column="9" Click="table_Click" Uid="25">25</Button>
-            <Button x:Name="dwadziescia_szesc" Grid.Row="2" Grid.Column="9" Click="table_Click" Uid="26">26</Button>
-            <Button x:Name="dwadziescia_siedem" Grid.Row="3" Grid.Column="9" Click="table_Click" Uid="27">27</Button>
-            <Button x:Name="dwadziescia_osiem" Grid.Row="1" Grid.Column="10" Click="table_Click" Uid="28">28</Button>
-            <Button x:Name="dwadziescia_dziewiec" Grid.Row="2" Grid.Column="10" Click="table_Click" Uid="29">29</Button>
-            <Button x:Name="trzydziesci" Grid.Row="3" Grid.Column="10" Click="table_Click" Uid="30">30</Button>
-            <Button x:Name="trzydziesci_jeden" Grid.Row="1" Grid.Column="11" Click="table_Click" Uid="31">31</Button>
-            <Button x:Name="trzydziesci_dwa" Grid.Row="2" Grid.Column="11" Click="table_Click" Uid="32">32</Button>
-            <Button x:Name="trzydziesci_trzy" Grid.Row="3" Grid.Column="11" Click="table_Click" Uid="33">33</Button>
-            <Button x:Name="trzydziesci_cztery" Grid.Row="1" Grid.Column="12" Click="table_Click" Uid="34">34</Button>
-            <Button x:Name="trzydziesci_piec" Grid.Row="2" Grid.Column="12" Click="table_Click" Uid="35">35</Button>
-            <Button x:Name="trzydziesci_szesc" Grid.Row="3" Grid.Column="12" Click="table_Click" Uid="36">36</Button>
-            <Button x:Name="first12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Click="table_Click"  Uid="first 12">first 12</Button>
-            <Button x:Name="second12" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="4" Click="table_Click"  Uid="second 12">second 12</Button>
-            <Button x:Name="third12" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Click="table_Click" Uid="third 12">third 12</Button>
-            <Button x:Name="jeden_osiemnascie" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Click="table_Click" Uid="1-18">1-18</Button>
-            <Button x:Name="odd" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Click="table_Click" Uid="odd">odd</Button>
-            <Button x:Name="red" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="2" Click="table_Click" Uid="red">red</Button>
-            <Button x:Name="black" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="2" Click="table_Click" Uid="black">black</Button>
-            <Button x:Name="even" Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="2" Click="table_Click" Uid="even">even</Button>
-            <Button x:Name="dziewietnascie_trzydziesciszesc" Grid.Row="5" Grid.Column="11" Grid.ColumnSpan="2" Click="table_Click" Uid="19-36">19-36</Button>
-            <Button x:Name="jeden_trzy" Grid.Row="0" Grid.Column="1" Click="table_Click" Uid="1-3">↓</Button>
-            <Button x:Name="cztery_szesc" Grid.Row="0" Grid.Column="2" Click="table_Click" Uid="4-6">↓</Button>
-            <Button x:Name="siedem_dziewiec" Grid.Row="0" Grid.Column="3" Click="table_Click" Uid="7-9">↓</Button>
-            <Button x:Name="dziesiec_dwanascie" Grid.Row="0" Grid.Column="4" Click="table_Click" Uid="10-12">↓</Button>
-            <Button x:Name="trzynascie_pietnascie" Grid.Row="0" Grid.Column="5" Click="table_Click" Uid="13-15">↓</Button>
-            <Button x:Name="szesnascie_osiemnascie" Grid.Row="0" Grid.Column="6" Click="table_Click" Uid="16-18">↓</Button>
-            <Button x:Name="dziewietnascie_dwadziescia_jeden" Grid.Row="0" Grid.Column="7" Click="table_Click" Uid="19-21">↓</Button>
-            <Button x:Name="dwadziescia_dwa_dwadziescia_cztery" Grid.Row="0" Grid.Column="8" Click="table_Click" Uid="22-24">↓</Button>
-            <Button x:Name="dwadziescia_piec_dwadziescia_siedem" Grid.Row="0" Grid.Column="9" Click="table_Click" Uid="25-27">↓</Button>
-            <Button x:Name="dwadziescia_osiem_trzydziesci" Grid.Row="0" Grid.Column="10" Click="table_Click" Uid="28-30">↓</Button>
-            <Button x:Name="trzydziesci_jeden_trzydziesci_trzy" Grid.Row="0" Grid.Column="11" Click="table_Click" Uid="31-33">↓</Button>
-            <Button x:Name="trzydziesci_cztery_trzydziesci_szesc" Grid.Row="0" Grid.Column="12" Click="table_Click" Uid="34-36">↓</Button>
+            <Button x:Name="zero" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Click="table_Click" Style="{StaticResource Green}" Uid="0">0</Button>
+            <Button x:Name="jeden" Grid.Row="3" Grid.Column="1" Click="table_Click" Uid="1" Style="{StaticResource Red}" >1</Button>
+            <Button x:Name="dwa" Grid.Row="2" Grid.Column="1" Click="table_Click" Uid="2" Style="{StaticResource Black}" >2</Button>
+            <Button x:Name="trzy" Grid.Row="1" Grid.Column="1" Click="table_Click" Uid="3" Style="{StaticResource Red}" >3</Button>
+            <Button x:Name="cztery" Grid.Row="3" Grid.Column="2" Click="table_Click" Uid="4" Style="{StaticResource Red}" >4</Button>
+            <Button x:Name="piec" Grid.Row="2" Grid.Column="2" Click="table_Click" Uid="5" Style="{StaticResource Red}" >5</Button>
+            <Button x:Name="szesc" Grid.Row="1" Grid.Column="2" Click="table_Click" Uid="6" Style="{StaticResource Black}">6</Button>
+            <Button x:Name="siedem" Grid.Row="3" Grid.Column="3" Click="table_Click" Uid="7" Style="{StaticResource Red}">7</Button>
+            <Button x:Name="osiem" Grid.Row="2" Grid.Column="3" Click="table_Click" Uid="8" Style="{StaticResource Black}">8</Button>
+            <Button x:Name="dziewiec" Grid.Row="1" Grid.Column="3" Click="table_Click" Uid="9" Style="{StaticResource Red}">9</Button>
+            <Button x:Name="dziesiec" Grid.Row="3" Grid.Column="4" Click="table_Click" Uid="10" Style="{StaticResource Black}">10</Button>
+            <Button x:Name="jedenascie" Grid.Row="2" Grid.Column="4" Click="table_Click" Uid="11" Style="{StaticResource Black}">11</Button>
+            <Button x:Name="dwanascie" Grid.Row="1" Grid.Column="4" Click="table_Click" Uid="12" Style="{StaticResource Red}">12</Button>
+            <Button x:Name="trzynascie" Grid.Row="3" Grid.Column="5" Click="table_Click" Uid="13" Style="{StaticResource Black}">13</Button>
+            <Button x:Name="czternascie" Grid.Row="2" Grid.Column="5" Click="table_Click" Uid="14" Style="{StaticResource Red}">14</Button>
+            <Button x:Name="pietnascie" Grid.Row="1" Grid.Column="5" Click="table_Click" Uid="15" Style="{StaticResource Black}">15</Button>
+            <Button x:Name="szesnascie" Grid.Row="3" Grid.Column="6" Click="table_Click" Uid="16" Style="{StaticResource Red}">16</Button>
+            <Button x:Name="siedemnascie" Grid.Row="2" Grid.Column="6" Click="table_Click" Uid="17" Style="{StaticResource Black}">17</Button>
+            <Button x:Name="osiemnascie" Grid.Row="1" Grid.Column="6" Click="table_Click" Uid="18" Style="{StaticResource Red}">18</Button>
+            <Button x:Name="dziewietnascie" Grid.Row="1" Grid.Column="7" Click="table_Click" Uid="19" Style="{StaticResource Black}">19</Button>
+            <Button x:Name="dwadziescia" Grid.Row="2" Grid.Column="7" Click="table_Click" Uid="20" Style="{StaticResource Black}">20</Button>
+            <Button x:Name="dwadziescia_jeden" Grid.Row="3" Grid.Column="7" Click="table_Click" Uid="21" Style="{StaticResource Red}">21</Button>
+            <Button x:Name="dwadziescia_dwa" Grid.Row="1" Grid.Column="8" Click="table_Click" Uid="22" Style="{StaticResource Black}">22</Button>
+            <Button x:Name="dwadziescia_trzy" Grid.Row="2" Grid.Column="8" Click="table_Click" Uid="23" Style="{StaticResource Red}">23</Button>
+            <Button x:Name="dwadziescia_cztery" Grid.Row="3" Grid.Column="8" Click="table_Click" Uid="24" Style="{StaticResource Black}">24</Button>
+            <Button x:Name="dwadziescia_piec" Grid.Row="1" Grid.Column="9" Click="table_Click" Uid="25" Style="{StaticResource Red}">25</Button>
+            <Button x:Name="dwadziescia_szesc" Grid.Row="2" Grid.Column="9" Click="table_Click" Uid="26" Style="{StaticResource Black}">26</Button>
+            <Button x:Name="dwadziescia_siedem" Grid.Row="3" Grid.Column="9" Click="table_Click" Uid="27" Style="{StaticResource Red}">27</Button>
+            <Button x:Name="dwadziescia_osiem" Grid.Row="1" Grid.Column="10" Click="table_Click" Uid="28" Style="{StaticResource Black}">28</Button>
+            <Button x:Name="dwadziescia_dziewiec" Grid.Row="2" Grid.Column="10" Click="table_Click" Uid="29" Style="{StaticResource Black}">29</Button>
+            <Button x:Name="trzydziesci" Grid.Row="3" Grid.Column="10" Click="table_Click" Uid="30"  Style="{StaticResource Red}">30</Button>
+            <Button x:Name="trzydziesci_jeden" Grid.Row="1" Grid.Column="11" Click="table_Click" Uid="31"  Style="{StaticResource Black}">31</Button>
+            <Button x:Name="trzydziesci_dwa" Grid.Row="2" Grid.Column="11" Click="table_Click" Uid="32" Style="{StaticResource Red}">32</Button>
+            <Button x:Name="trzydziesci_trzy" Grid.Row="3" Grid.Column="11" Click="table_Click" Uid="33"  Style="{StaticResource Black}">33</Button>
+            <Button x:Name="trzydziesci_cztery" Grid.Row="1" Grid.Column="12" Click="table_Click" Uid="34" Style="{StaticResource Red}">34</Button>
+            <Button x:Name="trzydziesci_piec" Grid.Row="2" Grid.Column="12" Click="table_Click" Uid="35"  Style="{StaticResource Black}">35</Button>
+            <Button x:Name="trzydziesci_szesc" Grid.Row="3" Grid.Column="12" Click="table_Click" Uid="36" Style="{StaticResource Red}">36</Button>
+            <Button x:Name="first12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Click="table_Click"  Uid="first 12" Style="{StaticResource Green}">first 12</Button>
+            <Button x:Name="second12" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="4" Click="table_Click"  Uid="second 12" Style="{StaticResource Green}">second 12</Button>
+            <Button x:Name="third12" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Click="table_Click" Uid="third 12" Style="{StaticResource Green}">third 12</Button>
+            <Button x:Name="jeden_osiemnascie" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Click="table_Click" Uid="1-18" Style="{StaticResource Green}">1-18</Button>
+            <Button x:Name="odd" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Click="table_Click" Uid="odd" Style="{StaticResource Green}">odd</Button>
+            <Button x:Name="red" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="2" Click="table_Click" Uid="red" Style="{StaticResource Red}">red</Button>
+            <Button x:Name="black" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="2" Click="table_Click" Uid="black" Style="{StaticResource Black}">black</Button>
+            <Button x:Name="even" Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="2" Click="table_Click" Uid="even" Style="{StaticResource Green}">even</Button>
+            <Button x:Name="dziewietnascie_trzydziesciszesc" Grid.Row="5" Grid.Column="11" Grid.ColumnSpan="2" Click="table_Click" Uid="19-36" Style="{StaticResource Green}">19-36</Button>
+            <Button x:Name="jeden_trzy" Grid.Row="0" Grid.Column="1" Click="table_Click" Uid="1-3" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="cztery_szesc" Grid.Row="0" Grid.Column="2" Click="table_Click" Uid="4-6" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="siedem_dziewiec" Grid.Row="0" Grid.Column="3" Click="table_Click" Uid="7-9" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="dziesiec_dwanascie" Grid.Row="0" Grid.Column="4" Click="table_Click" Uid="10-12" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="trzynascie_pietnascie" Grid.Row="0" Grid.Column="5" Click="table_Click" Uid="13-15" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="szesnascie_osiemnascie" Grid.Row="0" Grid.Column="6" Click="table_Click" Uid="16-18" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="dziewietnascie_dwadziescia_jeden" Grid.Row="0" Grid.Column="7" Click="table_Click" Uid="19-21" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="dwadziescia_dwa_dwadziescia_cztery" Grid.Row="0" Grid.Column="8" Click="table_Click" Uid="22-24" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="dwadziescia_piec_dwadziescia_siedem" Grid.Row="0" Grid.Column="9" Click="table_Click" Uid="25-27" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="dwadziescia_osiem_trzydziesci" Grid.Row="0" Grid.Column="10" Click="table_Click" Uid="28-30" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="trzydziesci_jeden_trzydziesci_trzy" Grid.Row="0" Grid.Column="11" Click="table_Click" Uid="31-33" Style="{StaticResource Green}">↓</Button>
+            <Button x:Name="trzydziesci_cztery_trzydziesci_szesc" Grid.Row="0" Grid.Column="12" Click="table_Click" Uid="34-36" Style="{StaticResource Green}">↓</Button>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
