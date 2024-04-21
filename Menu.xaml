@@ -11,10 +11,7 @@
         <Style TargetType="Button" BasedOn="{StaticResource MenuButton}">
         </Style>
     </Window.Resources>
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/images/backgrounds/bg-menu-black.jpg"/>
-        </Grid.Background>
+    <Grid Style="{StaticResource background2}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -22,8 +19,8 @@
         
         <!--ekran1-->
         <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Name="MenuUniImg">
-            <TextBlock  FontSize="110" TextAlignment="Center"> Paypal me money</TextBlock>
-            <Image Source="images\uni\uni-menu.png"/>
+            <TextBlock  FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
+            <Image Source="\images\uni\uni-menu.png"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>

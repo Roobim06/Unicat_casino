@@ -7,45 +7,66 @@
         mc:Ignorable="d"
         Title="Settings" WindowState="Maximized"
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
-    <Window.Resources>
-        <Style TargetType="Button">
-        </Style>
-    </Window.Resources>
-    <Grid Background="Blue">
-        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource White}">
+
+    <Grid  Style="{DynamicResource background1}">
+        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource SettingsButton}">
             <Image Source="images/controls/back.png" Width="50" Height="50"/>
         </Button>
-        <StackPanel HorizontalAlignment="Center">
-            <TextBlock Text="Zmień ustawienia aplikacji" FontSize="18"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Zmień motyw aplikacji" Style="{DynamicResource SettingsTitle}"/>
+
+
+
+            <StackPanel Orientation="Horizontal" Margin="6 10 0 10">
+                <RadioButton Name="BlackMode1" IsChecked="True" GroupName="themesSelection" Checked="DarkMode_Checked">
+                    <RadioButton.LayoutTransform>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                    </RadioButton.LayoutTransform>
+                </RadioButton>
+                <TextBlock Margin="5 0 0 0" FontSize="18" FontWeight="Normal" Text="Ciemny motyw" Style="{DynamicResource SettingsTitle}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="6 10 0 10">
+                <RadioButton Name="LightMode1" GroupName="themesSelection" Checked="LightMode_Checked">
+                    <RadioButton.LayoutTransform>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                    </RadioButton.LayoutTransform>
+                </RadioButton>
+                <TextBlock Margin="5 0 0 0" FontSize="18" FontWeight="Normal" Text="Jasny motyw" Style="{DynamicResource SettingsTitle}"/>
+            </StackPanel>
+
+            <Button Click="ChangeTheme_Click" Content="Zmiana motywu" Style="{DynamicResource SettingsButton}"/>
+
+            <TextBlock Style="{DynamicResource SettingsTitle}" Text="Zmień styl tyłu kard"/>
             <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <RadioButton Name="BlackMode1" Content="Ciemny motyw (1)" IsChecked="True" GroupName="themesSelection" Checked="DarkMode_Checked" />
-                    <RadioButton Name="LightMode1" Content="Jasny motyw (1)" GroupName="themesSelection" Checked="LightMode_Checked" />
-                    <Button Click="ChangeTheme_Click" Content="Zmiana motywu" />
-                </StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="Button"/>
+                </StackPanel.Resources>
+                <Button x:Name="uno" Width="200" Uid="1" Click="ChangeCardsBack" IsEnabled="false">
+                    <Image Source="images/back1.jpg"></Image>
+                </Button>
+                <Button x:Name="dos" Width="200" Uid="2" Click="ChangeCardsBack">
+                    <Image Source="images/back2.jpg"></Image>
+                </Button>
+                <Button x:Name="tres" Width="200" Uid="3" Click="ChangeCardsBack">
+                    <Image Source="images/back3.jpg"></Image>
+                </Button>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <TextBlock Text="Zmień ustawienia aplikacji"  FontSize="18"/>
-                    <CheckBox Name="MuteMusicCheckbox" Content="Wycisz muzykę" Checked="MuteMusic"/>
-                    <Button Click="MuteMusic_Click" Content="Wycisz muzykę"/>
-                </StackPanel>
+
+            <TextBlock Text="Zmień ustawienia aplikacji" Style="{DynamicResource SettingsTitle}"/>
+
+            <StackPanel Orientation="Horizontal" Margin="6 10 0 10">
+                <CheckBox Name="MuteMusicCheckbox" Checked="MuteMusic" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="10" >
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <TextBlock Margin="5 0 0 0" FontSize="18" FontWeight="Normal" Style="{DynamicResource SettingsTitle}"> Wycisz muzykę</TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBlock>Wybierz tył kart</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="uno" Width="200" Uid="1" Click="Button_Click_2" IsEnabled="false">
-                        <Image Source="images/back1.jpg"></Image>
-                    </Button>
-                    <Button x:Name="dos" Width="200" Uid="2" Click="Button_Click_2">
-                        <Image Source="images/back2.jpg"></Image>
-                    </Button>
-                    <Button x:Name="tres" Width="200" Uid="3" Click="Button_Click_2">
-                        <Image Source="images/back3.jpg"></Image>
-                    </Button>
-                </StackPanel>
-            </StackPanel>
-            <Button Click="Button_Click">Dodaj se zetony +200</Button>
+            <Button Click="MuteMusic_Click" Content="Wycisz muzykę" Style="{DynamicResource SettingsButton}"/>
+
+            <TextBlock Text="Debug" Style="{DynamicResource SettingsTitle}"/>
+            <Button Click="AddTokens" Style="{DynamicResource SettingsButton}" Content="Dodaj żetony +200"/>
         </StackPanel>
     </Grid>
 </Window>

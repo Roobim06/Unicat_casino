@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="Resetuj Hasło" ResizeMode="NoResize" WindowState="Maximized"
     WindowStyle="None" Height="1080" Width="1920">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="60"/>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{DynamicResource background1}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -25,17 +30,15 @@
             <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click">Wyslij kod</Button>
         </StackPanel>
         <StackPanel x:Name="stage2"  Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
-            <TextBlock FontSize="40" TextAlignment="Center">
-                Prosze podaj kod przesłany na email
-            </TextBlock>
-            <TextBox x:Name="codeenter"></TextBox>
-            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_1">Sprawdz Kod</Button>
+            <TextBlock FontSize="40" TextAlignment="Center" Text="Prosze podaj kod przesłany na email"/>
+            <TextBox x:Name="codeenter"/>
+            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_1" Content="Sprawdz kod"/>
         </StackPanel>
         <StackPanel x:Name="stage3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="522" Visibility="Collapsed">
-            <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold">Formularz resetowania hasła</TextBlock>
-            <Label FontSize="30">Podaj nowe hasło</Label>
-            <TextBox x:Name="passenter" TextChanged="passenter_TextChanged"></TextBox>
-            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_2">Zresetuj hasło</Button>
+            <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold" Text="Formularz resetowania hasła"/>
+            <Label FontSize="30" Content="Podaj nowe hasło"/>
+            <TextBox x:Name="passenter" TextChanged="passenter_TextChanged"/>
+            <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_2" Content="Zresetuj hasło"/>
         </StackPanel>
     </Grid>
 </Window>
