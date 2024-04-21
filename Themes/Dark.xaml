@@ -8,6 +8,36 @@
 
 
 
+    <!--Background-->
+    <Style TargetType="Grid" x:Key="background1">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/images/backgrounds/bg-login-black.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Grid" x:Key="background2">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/images/backgrounds/bg-menu-black.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TextBlock-->
+    <Style TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="SettingsTitle">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
     <!--Button-->
     <Style TargetType="Button">
         <Setter Property="Width" Value="400"/>
@@ -19,6 +49,31 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Margin" Value="7"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#444444"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="CommonButtonStyle">
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="4"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -36,72 +91,16 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    <!--TextBlock-->
-    <Style TargetType="TextBlock">
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="Margin" Value="7"/>
-        <Setter Property="Foreground" Value="White"/>
-    </Style>
-
-
-
-    <Style TargetType="Button" x:Key="MenuButton">
+    <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}" x:Key="MenuButton">
         <Setter Property="Width" Value="600"/>
         <Setter Property="Height" Value="100"/>
-        <Setter Property="FontSize" Value="40"/>
-        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="7"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Background" Value="Black"/>
-        <Setter Property="BorderBrush" Value="Gray"/>
-        <Setter Property="BorderThickness" Value="4"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#444444"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
-    <Style TargetType="Button" x:Key="SelectGameModeButton">
+    <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}" x:Key="SelectGameModeButton">
         <Setter Property="Width" Value="500"/>
         <Setter Property="Height" Value="160"/>
-        <Setter Property="FontSize" Value="40"/>
-        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="10"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Background" Value="Black"/>
-        <Setter Property="BorderBrush" Value="Gray"/>
-        <Setter Property="BorderThickness" Value="4"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}"
-             BorderThickness="{TemplateBinding BorderThickness}"
-             Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#444444"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-    
     <Style TargetType="TextBox">
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Margin" Value="7"/>
@@ -119,5 +118,12 @@
         <Setter Property="Margin" Value="7"/>
     </Style>
 
+    <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}" x:Key="SettingsButton">
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
 
 </ResourceDictionary>

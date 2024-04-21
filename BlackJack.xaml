@@ -32,7 +32,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid x:Name="maingrid">
+    <Grid x:Name="maingrid" >
         <Grid.Background>
             <ImageBrush ImageSource="images/pokertable_uni.png"></ImageBrush>
         </Grid.Background>

@@ -24,7 +24,7 @@ namespace Unicat_Casino
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddTokens(object sender, RoutedEventArgs e)
         {
             konta.UpdateTokens(200);
         }
@@ -36,7 +36,7 @@ namespace Unicat_Casino
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void ChangeCardsBack(object sender, RoutedEventArgs e)
         {
             var button = (sender as Button);
             konta.konto.cardback = Convert.ToInt32(button.Uid);

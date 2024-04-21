@@ -6,19 +6,32 @@
         xmlns:local="clr-namespace:Unicat_Casino"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="Rzut monetą" Height="1080" Width="1920">
-    <Grid>
-        <!--<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="images/files/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
-
-            <TextBlock Text="Rzuć kostką" FontSize="40" HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Horizontal">
-                <Slider Width="300" Maximum="6" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight"/>
+        Title="Rzut monetą" Height="1080" Width="1920"
+        WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20 0 20 0"/>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{DynamicResource background1}">
+        <Button Width="50" Height="50" Click="ReturnMenu" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0">X</Button>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="/images/dice/dice.png" Width="400" Height="400" HorizontalAlignment="Center" Name="dice" MouseLeftButtonDown="RollClick"/>
+            <Image Width="400" Height="400" HorizontalAlignment="Center" Name="diceRoll" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/dice/roll.gif" />
+            <TextBlock Text="Rzuć kością" FontSize="40" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Name="RollButtons">
+                <Button Content="1" Click="Roll" />
+                <Button Content="2" Click="Roll" />
+                <Button Content="3" Click="Roll"/>
+                <Button Content="4" Click="Roll"/>
+                <Button Content="5" Click="Roll"/>
+                <Button Content="6" Click="Roll"/>
             </StackPanel>
-            <TextBlock  FontSize="30" HorizontalAlignment="Center" Name="wynik"/>
-
-        </StackPanel>-->
-
-
+            <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="wynik1"/>
+            <TextBlock Text="" FontSize="30" HorizontalAlignment="Center" Name="wynik2"/>
+            <Label x:Name="zastaw">Postawione tokeny:0</Label>
+            <Slider Minimum="1" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Zetony"></Slider>
+        </StackPanel>
     </Grid>
 </Window>

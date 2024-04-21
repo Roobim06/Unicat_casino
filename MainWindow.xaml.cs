@@ -87,6 +87,12 @@ namespace Unicat_Casino
             }
         }
 
+        private void GoMenu(object sender, RoutedEventArgs e)
+        {
+            Menu menuWindow = new Menu();
+            menuWindow.Show();
+            this.Close();
+        }
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             RegisterPanel.Visibility = Visibility.Visible;
@@ -207,7 +213,7 @@ namespace Unicat_Casino
             }
         }
 
-        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        private void RememberMe(object sender, RoutedEventArgs e)
         {
             CheckBox checks = sender as CheckBox;
             if (checks.IsChecked == true)
@@ -224,7 +230,7 @@ namespace Unicat_Casino
             }
         }
 
-        private void CheckBox_Click_1(object sender, RoutedEventArgs e)
+        private void RememberMe2(object sender, RoutedEventArgs e)
         {
             CheckBox checks = sender as CheckBox;
             if (checks.IsChecked == true)
@@ -244,6 +250,7 @@ namespace Unicat_Casino
         {
             this.Close();
         }
+
 
         private void Zaloguj_gosc(object sender, RoutedEventArgs e)
         {

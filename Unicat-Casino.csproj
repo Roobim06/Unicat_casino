@@ -128,6 +128,14 @@
     <None Remove="images\coin\flip2.gif" />
     <None Remove="images\coin\flip2nobg.gif" />
     <None Remove="images\controls\back.png" />
+    <None Remove="images\dice\1_dice.png" />
+    <None Remove="images\dice\2_dice.png" />
+    <None Remove="images\dice\3_dice.png" />
+    <None Remove="images\dice\4_dice.png" />
+    <None Remove="images\dice\5_dice.png" />
+    <None Remove="images\dice\6_dice.png" />
+    <None Remove="images\dice\dice.png" />
+    <None Remove="images\dice\roll.gif" />
     <None Remove="images\files\flip.gif" />
     <None Remove="images\files\orzel.png" />
     <None Remove="images\files\reszka.png" />
@@ -178,6 +186,14 @@
     <None Remove="images\uni\uni.png" />
     <None Remove="images\uni\uni2.png" />
     <None Remove="images\uni\Unico.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\dice\1_dice.png" />
+    <Resource Include="images\dice\2_dice.png" />
+    <Resource Include="images\dice\3_dice.png" />
+    <Resource Include="images\dice\4_dice.png" />
+    <Resource Include="images\dice\5_dice.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -236,6 +252,9 @@
     <Resource Include="images\cards\Q_kier.jpg" />
     <Resource Include="images\cards\Q_pik.jpg" />
     <Resource Include="images\cards\Q_trefl.jpg" />
+    <Resource Include="images\dice\6_dice.png" />
+    <Resource Include="images\dice\dice.png" />
+    <Resource Include="images\dice\roll.gif" />
     <Resource Include="images\pokertable_uni.png" />
     <Resource Include="images\roulette.png" />
     <Resource Include="images\roulettewheelspin.gif" />
