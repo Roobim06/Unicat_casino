@@ -243,7 +243,7 @@ namespace Unicat_Casino
             {
                 if(karta.odkryte == false)
                 {
-                    imagePaths.Add("/images/back"+konta.konto.cardback+".jpg");
+                    imagePaths.Add("/images/cards/back"+konta.konto.cardback+".jpg");
                 }
                 else
                 {
@@ -268,7 +268,7 @@ namespace Unicat_Casino
             {
                 if (karta.odkryte == false)
                 {
-                    imagePaths.Add("/images/back"+konta.konto.cardback+".jpg");
+                    imagePaths.Add("/images/cards/back"+konta.konto.cardback+".jpg");
                 }
                 else
                 {

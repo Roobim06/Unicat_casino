@@ -101,6 +101,8 @@
         <Setter Property="Width" Value="500"/>
         <Setter Property="Height" Value="160"/>
         <Setter Property="Margin" Value="10"/>
+    </Style>
+
     <Style TargetType="TextBox">
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Margin" Value="7"/>
