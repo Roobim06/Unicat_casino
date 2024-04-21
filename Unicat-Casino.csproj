@@ -139,6 +139,7 @@
     <None Remove="images\files\flip.gif" />
     <None Remove="images\files\orzel.png" />
     <None Remove="images\files\reszka.png" />
+    <None Remove="images\uni-menu2.png" />
     <None Remove="images\uni\menu_paypal_me.jpg" />
     <None Remove="images\ocena.png" />
     <None Remove="images\pokertable_uni.png" />
@@ -183,9 +184,17 @@
     <None Remove="images\roulette\roulettewheel_8.png" />
     <None Remove="images\roulette\roulettewheel_9.png" />
     <None Remove="images\uni\uni-menu.png" />
+    <None Remove="images\uni\uni-menu2.png" />
     <None Remove="images\uni\uni.png" />
     <None Remove="images\uni\uni2.png" />
     <None Remove="images\uni\Unico.jpg" />
+    <None Remove="uni-menu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\uni\uni-menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -381,14 +390,15 @@
     <Resource Include="images\coin\flip2nobg.gif" />
     <Resource Include="images\coin\orzel.png" /> 
     <Resource Include="images\coin\reszka.png" /> 
-    <Resource Include="images\controls\back.png" />
+    <Resource Include="images\controls\back.png" /> 
+    <Resource Include="images\uni-menu2.png" />
     <Resource Include="images\uni\menu_paypal_me.jpg" />
     <Resource Include="images\ocena.png" />
     <Resource Include="images\roulettewheel.png" />
-    <Resource Include="images\uni\uni-menu.png" />
     <Resource Include="images\uni\uni.png" />
     <Resource Include="images\uni\uni2.png" />
     <Resource Include="images\uni\Unico.jpg" />
+    <Resource Include="uni-menu.png" />
   </ItemGroup>
 
   <ItemGroup>

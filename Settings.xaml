@@ -9,7 +9,7 @@
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
 
     <Grid  Style="{DynamicResource background1}">
-        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource SettingsButton}">
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
             <Image Source="images/controls/back.png" Width="50" Height="50"/>
         </Button>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">

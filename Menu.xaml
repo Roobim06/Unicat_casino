@@ -19,8 +19,8 @@
         
         <!--ekran1-->
         <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Name="MenuUniImg">
-            <TextBlock  FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
-            <Image Source="\images\uni\uni-menu.png"/>
+            <TextBlock FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
+            <Image Source="/images/uni/uni-menu.png" StretchDirection="UpOnly"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
@@ -31,7 +31,7 @@
 
         
         <!--ekran2-->
-        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Background="{DynamicResource White}" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Background="{DynamicResource White}" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
             <Image Source="images/controls/back.png" Width="50" Height="50"/>
         </Button>
         <StackPanel VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Name="GamesPanel" Grid.Column="0" Grid.ColumnSpan="2" >
