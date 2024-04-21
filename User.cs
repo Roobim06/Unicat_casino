@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 
 namespace Unicat_Casino
 {
@@ -26,20 +27,27 @@ namespace Unicat_Casino
         public static User konto = null;
         public static void UpdateTokens(int Value)
         {
-            try
+            if (konto.Nick == "Guest")
             {
-                konto.Tokens = konto.Tokens + Value;
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = "UPDATE [dbo].[User] \r\nSET Tokens = @Tokens \r\nWHERE CONVERT(varchar(Max), Nick) = @Nick;\r\n";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Tokens", konto.Tokens);
-                command.Parameters.AddWithValue("@Nick", konto.Nick);
-                SqlDataReader reader = command.ExecuteReader();
+                konto.Tokens += Value;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+                try
+                {
+                    konto.Tokens = konto.Tokens + Value;
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    connection.Open();
+                    string query = "UPDATE [dbo].[User] \r\nSET Tokens = @Tokens \r\nWHERE CONVERT(varchar(Max), Nick) = @Nick;\r\n";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Tokens", konto.Tokens);
+                    command.Parameters.AddWithValue("@Nick", konto.Nick);
+                    SqlDataReader reader = command.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+                }
             }
         }
     }
