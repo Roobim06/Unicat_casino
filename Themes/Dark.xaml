@@ -101,8 +101,23 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     
+    <Style TargetType="TextBox">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="PasswordBox">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+    <Style TargetType="CheckBox">
+        <Setter Property="Margin" Value="7"/>
+    </Style>
 
 
 </ResourceDictionary>

@@ -27,6 +27,7 @@
                     <TextBlock Text="Nie pamiętam hasła" Cursor="Hand" FontSize="20" MouseDown="TextBlock_MouseDown" Margin="10"/>
                 </StackPanel>
                 <Button Click="Login" Content="Zaloguj się"/>
+                <Button Click="Zaloguj_gosc" Content="Zaloguj się jako gość"/>
                 <Button Click="Exit" Content="Wyjdź"/>
             </StackPanel>
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"  Visibility="Collapsed" Name="RegisterPanel">
