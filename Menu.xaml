@@ -31,8 +31,9 @@
 
         
         <!--ekran2-->
-        <Button Width="50" Height="50" Margin="15,15,0,0"  Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Content="X" Style="{DynamicResource SettingsButton}" Visibility="Collapsed"/>
-
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Background="{DynamicResource White}" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+            <Image Source="images/controls/back.png" Width="50" Height="50"/>
+        </Button>
         <StackPanel VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Name="GamesPanel" Grid.Column="0" Grid.ColumnSpan="2" >
             <StackPanel.Resources>
                 <Style TargetType="Button" BasedOn="{StaticResource SelectGameModeButton}">

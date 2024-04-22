@@ -20,6 +20,8 @@ namespace Unicat_Casino
         public Menu()
         {
             InitializeComponent();
+            MenuUniImg.Visibility = Visibility.Visible;
+            MainMenu.Visibility = Visibility.Visible;
             Datacontexthere.DataContext = konta.konto;
         }
 
