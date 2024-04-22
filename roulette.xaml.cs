@@ -21,7 +21,7 @@ namespace Ruletka
     /// <summary>
     /// Logika interakcji dla klasy roulette.xaml
     /// </summary>
-    /// heehehehe
+    /// heehehehe <---- kto to napisal
     public partial class roulette : System.Windows.Window
     {
         string currentbet = "";
@@ -403,7 +403,7 @@ namespace Ruletka
             }
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e)
         {
             Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
             okno.Show();

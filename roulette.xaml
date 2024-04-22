@@ -7,8 +7,12 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="Ruletka" WindowState="Maximized"
-    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
-    <Window.Resources>
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920"
+        Background="{StaticResource Background}">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="images/backgrounds/roulette.png"></ImageBrush>
+    </Window.Background>-->
+    <Window.Resources> 
         <Style x:Key="Red" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -79,7 +83,7 @@
     </Window.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="images/roulette.png"></ImageBrush>
+            <ImageBrush ImageSource="images/backgrounds/roulette.png"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
@@ -92,8 +96,8 @@
             <ColumnDefinition Width="4*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image x:Name="nospin" Source="images/roulettewheel.png" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp" Stretch="Uniform"></Image>
-        <Image x:Name="spin" gif:ImageBehavior.AnimatedSource="images/roulettewheelspin.gif" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"></Image>
+        <Image x:Name="nospin" Source="images/roulette/roulettewheel.png" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp" Stretch="Uniform"></Image>
+        <Image x:Name="spin" gif:ImageBehavior.AnimatedSource="images/roulette/roulettewheelspin.gif" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"></Image>
         <Grid Grid.Row="1" Grid.Column="2" x:Name="temp">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -188,6 +192,7 @@
             <Slider Minimum="1" Maximum="2000" x:Name="sliderzetony" ValueChanged="sliderzetony_ValueChanged" Grid.Row="2" TickFrequency="1" IsSnapToTickEnabled="True"></Slider>
         </Grid>
         <Label x:Name="info" Grid.Row="2" Grid.Column="1">Jeszcze nic nie postawiono</Label>
-        <Button x:Name="Exit" Grid.Row="0" Grid.Column="3" Width="50" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Click="Exit_Click">X</Button>
+        <Button x:Name="Exit" Grid.Row="0" Grid.Column="0" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" Click="ClickCancelButton">X</Button>
+
     </Grid>
 </Window>

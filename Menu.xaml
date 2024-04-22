@@ -19,8 +19,8 @@
         
         <!--ekran1-->
         <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Name="MenuUniImg">
-            <TextBlock FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
-            <Image Source="/images/uni/uni-menu.png" StretchDirection="UpOnly"/>
+            <TextBlock  FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
+            <Image Source="\images\uni\uni-menu.png" />
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
             <Button Content="Wybierz Grę" Click="ClickChooseGame"/>
@@ -41,19 +41,19 @@
             </StackPanel.Resources>
             <TextBlock Text="Wybierz Tryb Gry" FontSize="70" Margin="0 0 0 40" HorizontalAlignment="Center" />
             <StackPanel Orientation="Horizontal">
-                <Button Click="FilpTheCoinGame" Content="Rzuć monetą" />
+                <Button Click="FilpTheCoinGame" Content="Rzut monetą" />
                 <Button Click="OdpalBlackJack" Content="Blackjack"/>
                 <Button Click="OdpalRuletke" Content="Ruletka"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Click="OdpalRollTheDice" Content="Rzut kostką"/>
-                <Button></Button>
-                <Button></Button>
+                <Button IsEnabled="False">...</Button>
+                <Button IsEnabled="False">...</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
+                <Button IsEnabled="False">...</Button>
+                <Button IsEnabled="False">...</Button>
+                <Button IsEnabled="False">...</Button>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="Datacontexthere" Grid.Row="0" Grid.Column="100" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,10,0">

@@ -43,13 +43,13 @@
                     <Style TargetType="Button"/>
                 </StackPanel.Resources>
                 <Button x:Name="uno" Width="200" Uid="1" Click="ChangeCardsBack" IsEnabled="false">
-                    <Image Source="images/back1.jpg"></Image>
+                    <Image Source="images/cards/back1.jpg"></Image>
                 </Button>
                 <Button x:Name="dos" Width="200" Uid="2" Click="ChangeCardsBack">
-                    <Image Source="images/back2.jpg"></Image>
+                    <Image Source="images/cards/back2.jpg"></Image>
                 </Button>
                 <Button x:Name="tres" Width="200" Uid="3" Click="ChangeCardsBack">
-                    <Image Source="images/back3.jpg"></Image>
+                    <Image Source="images/cards/back3.jpg"></Image>
                 </Button>
             </StackPanel>
 
