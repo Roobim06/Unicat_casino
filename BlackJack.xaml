@@ -37,7 +37,7 @@
     </Window.Resources>
     <Grid x:Name="maingrid" >
         <Grid.Background>
-            <ImageBrush ImageSource="images/pokertable_uni.png"></ImageBrush>
+            <ImageBrush ImageSource="images/backgrounds/pokertable_uni.png"></ImageBrush>
         </Grid.Background>
         <Image Height="200" x:Name="backImage" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Source="images/cards/back1.jpg"/>
 
