@@ -43,53 +43,26 @@ namespace Unicat_Casino
         {
             znak = 1;
             konta.UpdateTokens(postawionePieniądze * -1);
-            FilpCoin();
+            betOrzel.IsEnabled = false;
+            betReszka.IsEnabled = false;
+            coin.IsEnabled = true;
+            coPostawiles.Text = znak == 0 ? "Co postawiono: reszka" : "Co postawiono: orzeł";
+            wynik2.Text = "";
+            coWypadlo.Text = "";
+
+
         }
 
         private void FlipReszka(object sender, RoutedEventArgs e)
         {
             znak = 0;
             konta.UpdateTokens(postawionePieniądze * -1);
-            FilpCoin();
-        }
-
-        private async void FilpCoin()
-        {
             betOrzel.IsEnabled = false;
             betReszka.IsEnabled = false;
-            coin.Visibility = Visibility.Collapsed;
-            coinFlip.Visibility = Visibility.Visible;
-            wynik1.Text = "";
+            coin.IsEnabled = true;
+            coPostawiles.Text = znak == 0 ? "Co postawiono: reszka" : "Co postawiono: orzeł";
             wynik2.Text = "";
-            betOrzel.IsEnabled = false;
-            betReszka.IsEnabled = false;
-            Zetony.IsEnabled = false;
-            coin.Visibility = Visibility.Collapsed;
-            coinFlip.Visibility = Visibility.Visible;
-            wynik1.Text = "";
-            wynik2.Text = "";
-
-
-            int wynikLosowania = random.Next(0, 2);
-            await Task.Delay(1000);
-            wynik1.Text = wynikLosowania == 0 ? "Reszka" : "Orzeł";
-            wynik2.Text = znak == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
-
-            coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/coin/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/coin/orzel.png", UriKind.Relative));
-            if(wynikLosowania == znak)
-            {
-                konta.UpdateTokens(Convert.ToInt32(postawionePieniądze * 1.5));
-            }
-            else
-            {
-
-            }
-            postawionePieniądze = 0;
-            Zetony.Value = 1;
-            coin.Visibility = Visibility.Visible;
-            coinFlip.Visibility = Visibility.Collapsed;
-            Zetony.IsEnabled = true;
-
+            coWypadlo.Text = "";
 
 
 
@@ -97,10 +70,11 @@ namespace Unicat_Casino
 
         private void Zetony_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+
             Zetony.Maximum = konta.konto.Tokens;
             postawionePieniądze = Convert.ToInt32(Zetony.Value);
             zastaw.Content = "Postawione tokeny:" + postawionePieniądze;
-            if(postawionePieniądze != 1)
+            if (postawionePieniądze != 1)
             {
                 betOrzel.IsEnabled = true;
                 betReszka.IsEnabled = true;
@@ -118,5 +92,35 @@ namespace Unicat_Casino
             okno.Show();
             this.Close();
         }
+
+        private async void Flip_Click(object sender, MouseButtonEventArgs e)
+        {
+            coin.Visibility = Visibility.Collapsed;
+            coinFlip.Visibility = Visibility.Visible;
+            Zetony.IsEnabled = false;
+
+
+
+            int wynikLosowania = random.Next(0, 2);
+            await Task.Delay(1500);
+            wynik2.Text = znak == wynikLosowania ? $"Gratulacje! Wygrałeś {postawionePieniądze} pieniądzy!" : $"Przegrałeś {postawionePieniądze} pieniędzy!";
+
+            coin.Source = wynikLosowania == 0 ? new BitmapImage(new Uri("images/coin/reszka.png", UriKind.Relative)) : new BitmapImage(new Uri("images/coin/orzel.png", UriKind.Relative));
+            if (wynikLosowania == znak)
+            {
+                konta.UpdateTokens(Convert.ToInt32(postawionePieniądze * 2));
+            }
+
+
+            coWypadlo.Text = wynikLosowania == 0 ? "Co wypadło: reszka" : "Co wypadło: orzeł";
+            postawionePieniądze = 0;
+            Zetony.Value = 1;
+            coin.Visibility = Visibility.Visible;
+            coinFlip.Visibility = Visibility.Collapsed;
+            Zetony.IsEnabled = true;
+            coin.IsEnabled = false;
+        }
+
+
     }
 }

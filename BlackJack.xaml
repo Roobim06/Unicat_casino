@@ -8,7 +8,10 @@
         Title="BlackJack" WindowState="Maximized"
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Window.Resources>
-        <Style TargetType="Button"></Style>
+        <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="20 0 20 0"/>
+        </Style>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Effect">
@@ -36,32 +39,36 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/backgrounds/pokertable_uni.png"></ImageBrush>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <WrapPanel x:Name="playertable" Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        </WrapPanel>
-        <WrapPanel x:Name="dealertable" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        </WrapPanel>
-        <Button x:Name="dobierzkarte" Grid.Row="4" Click="Button_Click" Visibility="Collapsed">Dobierz karte</Button>
-        <Button x:Name="zakonczture" Grid.Row="4" Grid.Column="2" Click="Button_Click_1" Visibility="Collapsed">Zakoncz ture</Button>
-        <TextBlock Grid.Row="0" Grid.Column="1" Visibility="Collapsed" x:Name="reset" Foreground="Black" FontSize="20">Zagraj ponownie?</TextBlock>
-        <Button Click="Button_Click_2" Grid.Row="2" Grid.Column="1" Width="450" HorizontalAlignment="Left" Visibility="Collapsed" x:Name="resettak">Tak</Button>
-        <Button Click="Button_Click_3" Grid.Row="2" Grid.Column="1" Width="450" HorizontalAlignment="Right" Visibility="Collapsed" x:Name="resetnie">Nie</Button>
-        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="textzetony" Foreground="Black" FontSize="20" >Podaj ile żetonów chcesz postawic</TextBlock>
-        <Label Grid.Row="2" Grid.Column="1" x:Name="zetony" Content="{Binding tokens}" Foreground="Black" FontSize="20" HorizontalAlignment="Center"></Label>
-        <StackPanel Grid.Row="3" Grid.Column="1">
-            <Slider Minimum="1" x:Name="sliderz" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="sliderz_ValueChanged"></Slider>
-            <Button x:Name="zatwierdz" Click="zatwierdz_Click" Height="100" Width="200" VerticalAlignment="Center">Postaw</Button>
+        <Image Height="200" x:Name="backImage" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Source="images/cards/back1.jpg"/>
+
+        <Button  Visibility="Collapsed" x:Name="resetnie" Width="50" Height="50" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" FontSize="20">X</Button>
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel x:Name="dealertable" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200">
+            </WrapPanel>
+            <WrapPanel x:Name="playertable"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200">
+            </WrapPanel>
+
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="dobierzkarte" Click="Button_Click" Visibility="Collapsed">Dobierz karte</Button>
+                <Button x:Name="zakonczture" Click="Button_Click_1" Visibility="Collapsed">Zakoncz ture</Button>
+            </StackPanel>
+
+            <TextBlock Visibility="Collapsed" x:Name="reset" Foreground="Black" HorizontalAlignment="Center" >Zagraj ponownie?</TextBlock>
+            <Button Click="Button_Click_2" Width="450"   Visibility="Collapsed" x:Name="resettak">Zagraj ponownie</Button>
+            
+            <TextBlock x:Name="textzetony" Foreground="Black"  >Podaj ile żetonów chcesz postawic</TextBlock>
+            <Label x:Name="zetony" Content="{Binding tokens}" Foreground="Black" HorizontalAlignment="Center"></Label>
+            <StackPanel>
+                <Slider Minimum="1" x:Name="sliderz" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="sliderz_ValueChanged"></Slider>
+                <Button x:Name="zatwierdz" Click="zatwierdz_Click" Height="100" Width="200" VerticalAlignment="Center">Postaw</Button>
+            </StackPanel>
         </StackPanel>
+
+
+        
+        
     </Grid>
 </Window>

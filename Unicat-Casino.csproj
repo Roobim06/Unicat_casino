@@ -122,11 +122,10 @@
     <None Remove="images\cards\Q_pik.png" />
     <None Remove="images\cards\Q_trefl.jpg" />
     <None Remove="images\cards\Q_trefl.png" />
+    <None Remove="images\coin\fastflip.gif" />
     <None Remove="images\coin\flip.gif" />
     <None Remove="images\coin\orzel.png" />
     <None Remove="images\coin\reszka.png" />
-    <None Remove="images\coin\flip2.gif" />
-    <None Remove="images\coin\flip2nobg.gif" />
     <None Remove="images\controls\back.png" />
     <None Remove="images\dice\1_dice.png" />
     <None Remove="images\dice\2_dice.png" />
@@ -188,6 +187,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\coin\fastflip.gif" />
     <Resource Include="images\dice\1_dice.png" />
     <Resource Include="images\dice\2_dice.png" />
     <Resource Include="images\dice\3_dice.png" />
@@ -374,8 +374,6 @@
     <Resource Include="images\roulette\roulettewheel_6.png" />
     <Resource Include="images\roulette\roulettewheel_7.png" />
     <Resource Include="images\roulette\roulettewheel_9.png" />
-    <Resource Include="images\coin\flip2.gif" />
-    <Resource Include="images\coin\flip2nobg.gif" />
     <Resource Include="images\coin\orzel.png" /> 
     <Resource Include="images\coin\reszka.png" /> 
     <Resource Include="images\controls\back.png" />

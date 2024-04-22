@@ -9,16 +9,20 @@
         Title="Rzut monetą" WindowState="Maximized"
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Grid Style="{DynamicResource background1}">
-        <Button Width="50" Height="50" Click="Button_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0">X</Button>
+        <Button Width="50" Height="50" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0">X</Button>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="/images/coin/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin"/>
-            <Image Width="400" Height="400" HorizontalAlignment="Center" Name="coinFlip" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/coin/flip.gif" />
+            <Image Source="/images/coin/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin" MouseLeftButtonDown="Flip_Click"/>
+            <Image Width="400" Height="400" HorizontalAlignment="Center" Name="coinFlip" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/coin/fastflip.gif" />
             <TextBlock Text="Rzuć monetą" FontSize="40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Orzeł" Click="FlipOrzel" Name="betOrzel"/>
                 <Button Content="Reszka" Click="FlipReszka" Name="betReszka" />
             </StackPanel>
-            <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="wynik1"/>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="coPostawiles" Margin="0 7 20 0"/>
+                <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="coWypadlo"/>
+            </StackPanel>
+            
             <TextBlock Text="" FontSize="30" HorizontalAlignment="Center" Name="wynik2"/>
             <Label x:Name="zastaw">Postawione tokeny:0</Label>
             <Slider Minimum="1" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Zetony" ValueChanged="Zetony_ValueChanged"></Slider>

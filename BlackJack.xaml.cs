@@ -51,6 +51,7 @@ namespace Unicat_Casino
             InitializeComponent();
             zetony.Content = 0;
             sliderz.Maximum = konta.konto.Tokens;
+            backImage.Source = new BitmapImage(new Uri("/images/cards/back" + konta.konto.cardback + ".jpg", UriKind.Relative));
 
         }
         private void firstturn()
@@ -116,7 +117,7 @@ namespace Unicat_Casino
                 if (playerpoints > dealerpoints)
                 {
                     tokens = tokens * 2;
-                    reset.Text = "Wygrałes " + tokens + " zetonow\n grasz od nowa?";
+                    reset.Text = "Wygrałes " + tokens + " zetonow\nCzy grasz od nowa?";
                     konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
@@ -124,14 +125,14 @@ namespace Unicat_Casino
                 }
                 else if(playerpoints < dealerpoints)
                 {
-                    reset.Text = "Przegrales\n grasz od nowa?";
+                    reset.Text = "Przegrales\nCzy grasz od nowa?";
                     end = true;
                     dobierzkarte.IsEnabled = false;
                     zakonczture.IsEnabled = false;
                 }
                 else if(playerpoints == dealerpoints)
                 {
-                    reset.Text = "Remis, twoje zetony wracaja do ciebie\n grasz od nowa?";
+                    reset.Text = "Remis, twoje zetony wracaja do ciebie\nCzy grasz od nowa?";
                     konta.UpdateTokens(tokens);
                     end = true;
                     dobierzkarte.IsEnabled = false;
@@ -392,6 +393,16 @@ namespace Unicat_Casino
             konta.UpdateTokens(tokens * -1);
             firstturn();
         }
+
+
+        private void ClickCancelButton(object sender, RoutedEventArgs e)
+        {
+            Menu okno = new Menu();
+            okno.Show();
+            this.Close();
+        }
+
+
 
         private void sliderz_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
