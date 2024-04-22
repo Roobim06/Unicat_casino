@@ -10,16 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\backgrounds\bg-login-black.jpg" />
+    <None Remove="images\backgrounds\bg-login-white.jpg" />
+    <None Remove="images\backgrounds\bg-menu-black.jpg" />
+    <None Remove="images\backgrounds\bg-menu-white.jpg" />
     <None Remove="images\backgrounds\pokertable_uni.png" />
     <None Remove="images\cards\back.png" />
     <None Remove="images\cards\back1.jpg" />
     <None Remove="images\cards\back2.jpg" />
     <None Remove="images\cards\back3.jpg" />
     <None Remove="images\cards\10_karo.jpg" />
-    <None Remove="images\backgrounds\bg-login-black.jpg" />
-    <None Remove="images\backgrounds\bg-login-white.jpg" />
-    <None Remove="images\backgrounds\bg-menu-black.jpg" />
-    <None Remove="images\backgrounds\bg-menu-white.jpg" />
     <None Remove="images\cards\10_karo.png" />
     <None Remove="images\cards\10_kier.jpg" />
     <None Remove="images\cards\10_kier.png" />
@@ -193,6 +193,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\backgrounds\bg-login-black.jpg" />
+    <Resource Include="images\backgrounds\bg-login-white.jpg" />
+    <Resource Include="images\backgrounds\bg-menu-black.jpg" />
+    <Resource Include="images\backgrounds\bg-menu-white.jpg" />
     <Resource Include="images\uni\uni-menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -276,10 +280,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\backgrounds\bg-login-black.jpg" />
-    <Resource Include="images\backgrounds\bg-login-white.jpg" />
-    <Resource Include="images\backgrounds\bg-menu-black.jpg" />
-    <Resource Include="images\backgrounds\bg-menu-white.jpg" />
     <Resource Include="images\cards\3_kier.png" />
   </ItemGroup>
 
@@ -395,8 +395,6 @@
     <Resource Include="images\controls\back.png" /> 
     <Resource Include="images\uni-menu2.png" />
     <Resource Include="images\uni\menu_paypal_me.jpg" />
-    <Resource Include="images\ocena.png" />
-    <Resource Include="images\roulettewheel.png" />
     <Resource Include="images\roulette\roulettewheel.png" />
     <Resource Include="images\uni\uni-menu.png" />
     <Resource Include="images\uni\uni.png" />
