@@ -9,9 +9,8 @@
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
 
     <Grid  Style="{DynamicResource background1}">
-        <Button Width="50" Height="50" Margin="15,15,0,0" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource SettingsButton}">
-            <Image Source="images/controls/back.png" Width="50" Height="50"/>
-        </Button>
+        <Button Width="50" Height="50" Margin="15,15,0,0"  Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Content="X" Style="{DynamicResource SettingsButton}"/>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Zmień motyw aplikacji" Style="{DynamicResource SettingsTitle}"/>
 
@@ -43,13 +42,13 @@
                     <Style TargetType="Button"/>
                 </StackPanel.Resources>
                 <Button x:Name="uno" Width="200" Uid="1" Click="ChangeCardsBack" IsEnabled="false">
-                    <Image Source="images/back1.jpg"></Image>
+                    <Image Source="images/cards/back1.jpg"></Image>
                 </Button>
                 <Button x:Name="dos" Width="200" Uid="2" Click="ChangeCardsBack">
-                    <Image Source="images/back2.jpg"></Image>
+                    <Image Source="images/cards/back2.jpg"></Image>
                 </Button>
                 <Button x:Name="tres" Width="200" Uid="3" Click="ChangeCardsBack">
-                    <Image Source="images/back3.jpg"></Image>
+                    <Image Source="images/cards/back3.jpg"></Image>
                 </Button>
             </StackPanel>
 
