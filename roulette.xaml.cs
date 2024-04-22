@@ -21,7 +21,7 @@ namespace Ruletka
     /// <summary>
     /// Logika interakcji dla klasy roulette.xaml
     /// </summary>
-    /// heehehehe
+    /// heehehehe <---- kto to napisal
     public partial class roulette : System.Windows.Window
     {
         string currentbet = "";
