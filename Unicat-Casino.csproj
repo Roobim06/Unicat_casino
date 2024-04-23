@@ -15,10 +15,7 @@
     <None Remove="images\backgrounds\bg-menu-black.jpg" />
     <None Remove="images\backgrounds\bg-menu-white.jpg" />
     <None Remove="images\backgrounds\pokertable_uni.png" />
-    <None Remove="images\cards\back.png" />
-    <None Remove="images\cards\back1.jpg" />
-    <None Remove="images\cards\back2.jpg" />
-    <None Remove="images\cards\back3.jpg" />
+    <None Remove="images\backgrounds\roulette.png" />
     <None Remove="images\cards\10_karo.jpg" />
     <None Remove="images\cards\10_karo.png" />
     <None Remove="images\cards\10_kier.jpg" />
@@ -99,6 +96,10 @@
     <None Remove="images\cards\A_pik.png" />
     <None Remove="images\cards\A_trefl.jpg" />
     <None Remove="images\cards\A_trefl.png" />
+    <None Remove="images\cards\back.png" />
+    <None Remove="images\cards\back1.jpg" />
+    <None Remove="images\cards\back2.jpg" />
+    <None Remove="images\cards\back3.jpg" />
     <None Remove="images\cards\J_karo.jpg" />
     <None Remove="images\cards\J_karo.png" />
     <None Remove="images\cards\J_kier.jpg" />
@@ -123,6 +124,7 @@
     <None Remove="images\cards\Q_pik.png" />
     <None Remove="images\cards\Q_trefl.jpg" />
     <None Remove="images\cards\Q_trefl.png" />
+    <None Remove="images\coin\360.gif" />
     <None Remove="images\coin\fastflip.gif" />
     <None Remove="images\coin\flip.gif" />
     <None Remove="images\coin\orzel.png" />
@@ -136,15 +138,6 @@
     <None Remove="images\dice\6_dice.png" />
     <None Remove="images\dice\dice.png" />
     <None Remove="images\dice\roll.gif" />
-    <None Remove="images\files\flip.gif" />
-    <None Remove="images\files\orzel.png" />
-    <None Remove="images\files\reszka.png" />
-    <None Remove="images\uni-menu2.png" />
-    <None Remove="images\roulette\roulettewheel.png" />
-    <None Remove="images\roulette\roulettewheelspin.gif" />
-    <None Remove="images\uni\menu_paypal_me.jpg" />
-    <None Remove="images\backgrounds\roulette.png" />
-    <None Remove="images\background\pokertable_uni.png" />
     <None Remove="images\roulette\roulettewheel.png" />
     <None Remove="images\roulette\roulettewheelspin.gif" />
     <None Remove="images\roulette\roulettewheel_0.png" />
@@ -184,103 +177,11 @@
     <None Remove="images\roulette\roulettewheel_7.png" />
     <None Remove="images\roulette\roulettewheel_8.png" />
     <None Remove="images\roulette\roulettewheel_9.png" />
+    <None Remove="images\uni\menu_paypal_me.jpg" />
     <None Remove="images\uni\uni-menu.png" />
-    <None Remove="images\uni\uni-menu2.png" />
     <None Remove="images\uni\uni.png" />
     <None Remove="images\uni\uni2.png" />
     <None Remove="images\uni\Unico.jpg" />
-    <None Remove="uni-menu.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="images\backgrounds\bg-login-black.jpg" />
-    <Resource Include="images\backgrounds\bg-login-white.jpg" />
-    <Resource Include="images\backgrounds\bg-menu-black.jpg" />
-    <Resource Include="images\backgrounds\bg-menu-white.jpg" />
-    <Resource Include="images\uni\uni-menu.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="images\backgrounds\pokertable_uni.png" />
-    <Resource Include="images\coin\fastflip.gif" />
-    <Resource Include="images\dice\1_dice.png" />
-    <Resource Include="images\dice\2_dice.png" />
-    <Resource Include="images\dice\3_dice.png" />
-    <Resource Include="images\dice\4_dice.png" />
-    <Resource Include="images\dice\5_dice.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="images\cards\back2.jpg" />
-    <Resource Include="images\cards\back3.jpg" />
-    <Resource Include="images\cards\9_pik.png" />
-    <Resource Include="images\cards\5_trefl.jpg" />
-    <Resource Include="images\cards\Q_karo.jpg" />
-    <Resource Include="images\cards\K_kier.jpg" />
-    <Resource Include="images\cards\10_karo.jpg" />
-    <Resource Include="images\cards\10_kier.jpg" />
-    <Resource Include="images\cards\10_pik.jpg" />
-    <Resource Include="images\cards\10_trefl.jpg" />
-    <Resource Include="images\cards\2_karo.jpg" />
-    <Resource Include="images\cards\2_kier.jpg" />
-    <Resource Include="images\cards\2_pik.jpg" />
-    <Resource Include="images\cards\2_trefl.jpg" />
-    <Resource Include="images\cards\3_karo.jpg" />
-    <Resource Include="images\cards\3_kier.jpg" />
-    <Resource Include="images\cards\3_pik.jpg" />
-    <Resource Include="images\cards\3_trefl.jpg" />
-    <Resource Include="images\cards\4_karo.jpg" />
-    <Resource Include="images\cards\4_kier.jpg" />
-    <Resource Include="images\cards\4_pik.jpg" />
-    <Resource Include="images\cards\4_trefl.jpg" />
-    <Resource Include="images\cards\5_karo.jpg" />
-    <Resource Include="images\cards\5_kier.jpg" />
-    <Resource Include="images\cards\5_pik.jpg" />
-    <Resource Include="images\cards\6_karo.jpg" />
-    <Resource Include="images\cards\6_kier.jpg" />
-    <Resource Include="images\cards\6_pik.jpg" />
-    <Resource Include="images\cards\6_trefl.jpg" />
-    <Resource Include="images\cards\7_karo.jpg" />
-    <Resource Include="images\cards\7_kier.jpg" />
-    <Resource Include="images\cards\7_pik.jpg" />
-    <Resource Include="images\cards\7_trefl.jpg" />
-    <Resource Include="images\cards\8_karo.jpg" />
-    <Resource Include="images\cards\8_kier.jpg" />
-    <Resource Include="images\cards\8_pik.jpg" />
-    <Resource Include="images\cards\8_trefl.jpg" />
-    <Resource Include="images\cards\9_karo.jpg" />
-    <Resource Include="images\cards\9_kier.jpg" />
-    <Resource Include="images\cards\9_pik.jpg" />
-    <Resource Include="images\cards\9_trefl.jpg" />
-    <Resource Include="images\cards\A_karo.jpg" />
-    <Resource Include="images\cards\A_kier.jpg" />
-    <Resource Include="images\cards\A_pik.jpg" />
-    <Resource Include="images\cards\A_trefl.jpg" />
-    <Resource Include="images\cards\J_karo.jpg" />
-    <Resource Include="images\cards\J_kier.jpg" />
-    <Resource Include="images\cards\J_pik.jpg" />
-    <Resource Include="images\cards\J_trefl.jpg" />
-    <Resource Include="images\cards\K_karo.jpg" />
-    <Resource Include="images\cards\K_pik.jpg" />
-    <Resource Include="images\cards\K_trefl.jpg" />
-    <Resource Include="images\cards\Q_kier.jpg" />
-    <Resource Include="images\cards\Q_pik.jpg" />
-    <Resource Include="images\cards\Q_trefl.jpg" />
-    <Resource Include="images\dice\6_dice.png" />
-    <Resource Include="images\dice\dice.png" />
-    <Resource Include="images\dice\roll.gif" />
-    <Resource Include="images\backgrounds\roulette.png" />
-    <Resource Include="images\roulette\roulettewheel.png" />
-    <Resource Include="images\backgrounds\pokertable_uni.png" />
-    <Resource Include="images\roulette\roulettewheelspin.gif" />
-    <Resource Include="images\roulette\roulettewheel_8.png" />
-    <Resource Include="images\roulette\roulettewheel_3.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="images\cards\3_kier.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -298,63 +199,139 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\cards\back1.jpg" />
-    <Resource Include="images\cards\back.png" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\backgrounds\bg-login-black.jpg" />
+    <Resource Include="images\backgrounds\bg-login-white.jpg" />
+    <Resource Include="images\backgrounds\bg-menu-black.jpg" />
+    <Resource Include="images\backgrounds\bg-menu-white.jpg" />
+    <Resource Include="images\backgrounds\pokertable_uni.png" />
+    <Resource Include="images\backgrounds\roulette.png" />
+    <Resource Include="images\cards\10_karo.jpg" />
     <Resource Include="images\cards\10_karo.png" />
+    <Resource Include="images\cards\10_kier.jpg" />
     <Resource Include="images\cards\10_kier.png" />
+    <Resource Include="images\cards\10_pik.jpg" />
     <Resource Include="images\cards\10_pik.png" />
+    <Resource Include="images\cards\10_trefl.jpg" />
     <Resource Include="images\cards\10_trefl.png" />
+    <Resource Include="images\cards\2_karo.jpg" />
     <Resource Include="images\cards\2_karo.png" />
+    <Resource Include="images\cards\2_kier.jpg" />
     <Resource Include="images\cards\2_kier.png" />
-    <Resource Include="images\cards\2_pik.png" />
+    <Resource Include="images\cards\2_pik.jpg" />
+    <Resource Include="images\cards\2_trefl.jpg" />
     <Resource Include="images\cards\2_trefl.png" />
+    <Resource Include="images\cards\3_karo.jpg" />
     <Resource Include="images\cards\3_karo.png" />
+    <Resource Include="images\cards\3_kier.jpg" />
+    <Resource Include="images\cards\3_kier.png" />
+    <Resource Include="images\cards\3_pik.jpg" />
     <Resource Include="images\cards\3_pik.png" />
+    <Resource Include="images\cards\3_trefl.jpg" />
     <Resource Include="images\cards\3_trefl.png" />
+    <Resource Include="images\cards\4_karo.jpg" />
     <Resource Include="images\cards\4_karo.png" />
+    <Resource Include="images\cards\4_kier.jpg" />
     <Resource Include="images\cards\4_kier.png" />
+    <Resource Include="images\cards\4_pik.jpg" />
     <Resource Include="images\cards\4_pik.png" />
+    <Resource Include="images\cards\4_trefl.jpg" />
     <Resource Include="images\cards\4_trefl.png" />
+    <Resource Include="images\cards\5_karo.jpg" />
     <Resource Include="images\cards\5_karo.png" />
+    <Resource Include="images\cards\5_kier.jpg" />
     <Resource Include="images\cards\5_kier.png" />
+    <Resource Include="images\cards\5_pik.jpg" />
     <Resource Include="images\cards\5_pik.png" />
+    <Resource Include="images\cards\5_trefl.jpg" />
     <Resource Include="images\cards\5_trefl.png" />
+    <Resource Include="images\cards\6_karo.jpg" />
     <Resource Include="images\cards\6_karo.png" />
+    <Resource Include="images\cards\6_kier.jpg" />
     <Resource Include="images\cards\6_kier.png" />
+    <Resource Include="images\cards\6_pik.jpg" />
     <Resource Include="images\cards\6_pik.png" />
+    <Resource Include="images\cards\6_trefl.jpg" />
     <Resource Include="images\cards\6_trefl.png" />
+    <Resource Include="images\cards\7_karo.jpg" />
     <Resource Include="images\cards\7_karo.png" />
+    <Resource Include="images\cards\7_kier.jpg" />
     <Resource Include="images\cards\7_kier.png" />
+    <Resource Include="images\cards\7_pik.jpg" />
     <Resource Include="images\cards\7_pik.png" />
+    <Resource Include="images\cards\7_trefl.jpg" />
     <Resource Include="images\cards\7_trefl.png" />
+    <Resource Include="images\cards\8_karo.jpg" />
     <Resource Include="images\cards\8_karo.png" />
+    <Resource Include="images\cards\8_kier.jpg" />
     <Resource Include="images\cards\8_kier.png" />
+    <Resource Include="images\cards\8_pik.jpg" />
     <Resource Include="images\cards\8_pik.png" />
+    <Resource Include="images\cards\8_trefl.jpg" />
     <Resource Include="images\cards\8_trefl.png" />
+    <Resource Include="images\cards\9_karo.jpg" />
     <Resource Include="images\cards\9_karo.png" />
+    <Resource Include="images\cards\9_kier.jpg" />
     <Resource Include="images\cards\9_kier.png" />
+    <Resource Include="images\cards\9_pik.jpg" />
+    <Resource Include="images\cards\9_pik.png" />
+    <Resource Include="images\cards\9_trefl.jpg" />
     <Resource Include="images\cards\9_trefl.png" />
+    <Resource Include="images\cards\A_karo.jpg" />
     <Resource Include="images\cards\A_karo.png" />
+    <Resource Include="images\cards\A_kier.jpg" />
     <Resource Include="images\cards\A_kier.png" />
+    <Resource Include="images\cards\A_pik.jpg" />
     <Resource Include="images\cards\A_pik.png" />
+    <Resource Include="images\cards\A_trefl.jpg" />
     <Resource Include="images\cards\A_trefl.png" />
+    <Resource Include="images\cards\back.png" />
+    <Resource Include="images\cards\back1.jpg" />
+    <Resource Include="images\cards\back2.jpg" />
+    <Resource Include="images\cards\back3.jpg" />
+    <Resource Include="images\cards\J_karo.jpg" />
     <Resource Include="images\cards\J_karo.png" />
+    <Resource Include="images\cards\J_kier.jpg" />
     <Resource Include="images\cards\J_kier.png" />
+    <Resource Include="images\cards\J_pik.jpg" />
     <Resource Include="images\cards\J_pik.png" />
+    <Resource Include="images\cards\J_trefl.jpg" />
     <Resource Include="images\cards\J_trefl.png" />
+    <Resource Include="images\cards\K_karo.jpg" />
     <Resource Include="images\cards\K_karo.png" />
+    <Resource Include="images\cards\K_kier.jpg" />
     <Resource Include="images\cards\K_kier.png" />
+    <Resource Include="images\cards\K_pik.jpg" />
     <Resource Include="images\cards\K_pik.png" />
+    <Resource Include="images\cards\K_trefl.jpg" />
     <Resource Include="images\cards\K_trefl.png" />
+    <Resource Include="images\cards\Q_karo.jpg" />
     <Resource Include="images\cards\Q_karo.png" />
+    <Resource Include="images\cards\Q_kier.jpg" />
     <Resource Include="images\cards\Q_kier.png" />
+    <Resource Include="images\cards\Q_pik.jpg" />
     <Resource Include="images\cards\Q_pik.png" />
+    <Resource Include="images\cards\Q_trefl.jpg" />
     <Resource Include="images\cards\Q_trefl.png" />
+    <Resource Include="images\coin\360.gif" />
+    <Resource Include="images\coin\fastflip.gif" />
     <Resource Include="images\coin\flip.gif" />
     <Resource Include="images\coin\orzel.png" />
     <Resource Include="images\coin\reszka.png" />
-
+    <Resource Include="images\controls\back.png" />
+    <Resource Include="images\dice\1_dice.png" />
+    <Resource Include="images\dice\2_dice.png" />
+    <Resource Include="images\dice\3_dice.png" />
+    <Resource Include="images\dice\4_dice.png" />
+    <Resource Include="images\dice\5_dice.png" />
+    <Resource Include="images\dice\6_dice.png" />
+    <Resource Include="images\dice\dice.png" />
+    <Resource Include="images\dice\roll.gif" />
     <Resource Include="images\roulette\roulettewheel.png" />
+    <Resource Include="images\roulette\roulettewheelspin.gif" />
     <Resource Include="images\roulette\roulettewheel_0.png" />
     <Resource Include="images\roulette\roulettewheel_1.png" />
     <Resource Include="images\roulette\roulettewheel_10.png" />
@@ -378,6 +355,7 @@
     <Resource Include="images\roulette\roulettewheel_27.png" />
     <Resource Include="images\roulette\roulettewheel_28.png" />
     <Resource Include="images\roulette\roulettewheel_29.png" />
+    <Resource Include="images\roulette\roulettewheel_3.png" />
     <Resource Include="images\roulette\roulettewheel_30.png" />
     <Resource Include="images\roulette\roulettewheel_31.png" />
     <Resource Include="images\roulette\roulettewheel_32.png" />
@@ -389,22 +367,17 @@
     <Resource Include="images\roulette\roulettewheel_5.png" />
     <Resource Include="images\roulette\roulettewheel_6.png" />
     <Resource Include="images\roulette\roulettewheel_7.png" />
+    <Resource Include="images\roulette\roulettewheel_8.png" />
     <Resource Include="images\roulette\roulettewheel_9.png" />
-    <Resource Include="images\coin\orzel.png" /> 
-    <Resource Include="images\coin\reszka.png" /> 
-    <Resource Include="images\controls\back.png" /> 
-    <Resource Include="images\uni-menu2.png" />
     <Resource Include="images\uni\menu_paypal_me.jpg" />
-    <Resource Include="images\roulette\roulettewheel.png" />
     <Resource Include="images\uni\uni-menu.png" />
     <Resource Include="images\uni\uni.png" />
     <Resource Include="images\uni\uni2.png" />
     <Resource Include="images\uni\Unico.jpg" />
-    <Resource Include="uni-menu.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Themes\" />
+    <Resource Include="images\cards\2_pik.png" />
   </ItemGroup>
 
 </Project>
