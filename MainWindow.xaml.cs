@@ -222,7 +222,7 @@ namespace Unicat_Casino
                 PassLog.Visibility = Visibility.Collapsed;
                 Passlog2.Visibility = Visibility.Visible;
             }
-            else
+            if(checks.IsChecked == false)
             {
                 PassLog.Password = Passlog2.Text;
                 Passlog2.Visibility = Visibility.Collapsed;

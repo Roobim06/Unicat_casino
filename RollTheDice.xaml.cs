@@ -34,24 +34,30 @@ namespace Unicat_Casino
             {
                 button.IsEnabled = false;
             }
+            Zetony.Maximum = konta.konto.Tokens;
         }
 
         private async void RollClick(object sender, MouseButtonEventArgs e)
         {
             if(bet != 0){
+                konta.UpdateTokens(postawionePieniądze * -1);
                 dice.Visibility = Visibility.Collapsed;
                 diceRoll.Visibility = Visibility.Visible;
                 int wynikLosowania = random.Next(1, 7);
                 await Task.Delay(1500);
                 coWypadlo.Text = "Co wypadło: " + wynikLosowania.ToString();
                 wynik.Text = bet == wynikLosowania ? "Gratulacje! Wygrałeś pieniądze!" : "Przegrałeś pieniądze!";
+                if(wynikLosowania == bet)
+                {
+                    konta.UpdateTokens(Convert.ToInt32(postawionePieniądze * 1.5));
+                }
                 dice.Source = new BitmapImage(new Uri("images/dice/" + wynikLosowania.ToString() + "_dice.png", UriKind.Relative));
                 dice.Visibility = Visibility.Visible;
                 diceRoll.Visibility = Visibility.Collapsed;
                 bet = 0;
+                Zetony.Maximum = konta.konto.Tokens;
+                postawionePieniądze = 0;
                 Zetony.IsEnabled = true;
-
-
             }
         }
         private void Roll(object sender, RoutedEventArgs e)
@@ -77,10 +83,16 @@ namespace Unicat_Casino
         }
         private void ZetonyPostawione(object sender, RoutedEventArgs e)
         {
-            foreach (Button button in RollButtons.Children)
+            Zetony.Maximum = konta.konto.Tokens;
+            postawionePieniądze = Convert.ToInt32(Zetony.Value);
+            if(postawionePieniądze != 0)
             {
-                button.IsEnabled = true;
+                foreach (Button button in RollButtons.Children)
+                {
+                    button.IsEnabled = true;
+                }
             }
+            zastaw.Content = "Postawione tokeny:" + Zetony.Value;
             coWypadlo.Text = "";
             coPostawiles.Text = "";
             wynik.Text = "";
