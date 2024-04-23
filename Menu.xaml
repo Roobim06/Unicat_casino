@@ -47,7 +47,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Click="OdpalRollTheDice" Content="Rzut kostką"/>
-                <Button IsEnabled="False">...</Button>
+                <Button Click="Button_Click" >Jednoręki bandyta</Button>
                 <Button IsEnabled="False">...</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal">

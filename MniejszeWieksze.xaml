@@ -1,0 +1,39 @@
+﻿<Window x:Class="Unicat_Casino.MniejszeWieksze"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MniejszeWieksze" Height="1080" Width="1980"  WindowStyle="None" ResizeMode="NoResize"  WindowState="Maximized">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\slotmachine\slotmach.jpg"/>
+        </Grid.Background>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource BackButton}" Click="Button_Click">X</Button>
+        <Border Width="600" Height="600" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 0 0" CornerRadius="20">
+            <Border.Background>
+                <ImageBrush ImageSource="\images\slotmachine\unifinalnaborda.jpg"/>
+            </Border.Background>
+        </Border>
+        <Border Background="#080808" Width="424" Height="270" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,737,0,0" CornerRadius="20">
+            <Grid>
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Margin="15">
+                        <Label Foreground="Gold" FontFamily="Luckiest Guy" HorizontalAlignment="Center">Kredyty</Label>
+                        <Border Background="White" Width="130" Height="40" CornerRadius="20">
+                            <TextBlock x:Name="creditsTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Luckiest Guy" FontSize="30"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,161,0,0" Width="404">
+                    <Button x:Name="spinButton" Style="{StaticResource SettingsButton}" Width="300" HorizontalAlignment="Center" Click="SpinButton_Click">Spin</Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+        <!-- Grid z elementami w środku -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="612" Height="222" Margin="0,443,0,0">
+            <DockPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <Image x:Name="slot1" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
+                <Image x:Name="slot2" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
+                <Image x:Name="slot3" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

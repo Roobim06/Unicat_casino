@@ -87,7 +87,6 @@ namespace Unicat_Casino
                         {
                             email = Convert.ToString(reader["Email"]);
                             foundmail = true;
-                            MessageBox.Show("Udało sie zalogowac", "Pomyslne zalogowanie");
                         }
                     }
                     else
