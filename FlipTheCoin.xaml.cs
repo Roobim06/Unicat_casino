@@ -26,7 +26,7 @@ namespace Unicat_Casino
 {
     public partial class FlipTheCoin : Window
     {
-        // 1 - orzeł, 0 - reszka
+        // 1 - head, 0 - tail
         int znak = 1;
         int postawionePieniądze = 0;
         Random random = new Random();
@@ -42,13 +42,7 @@ namespace Unicat_Casino
         private void FlipOrzel(object sender, RoutedEventArgs e)
         {
             znak = 1;
-            konta.UpdateTokens(postawionePieniądze * -1);
-            betOrzel.IsEnabled = false;
-            betReszka.IsEnabled = false;
-            coin.IsEnabled = true;
-            coPostawiles.Text = znak == 0 ? "Co postawiono: reszka" : "Co postawiono: orzeł";
-            wynik2.Text = "";
-            coWypadlo.Text = "";
+            Update();
 
 
         }
@@ -56,16 +50,18 @@ namespace Unicat_Casino
         private void FlipReszka(object sender, RoutedEventArgs e)
         {
             znak = 0;
+            Update();
+
+        }
+        private void Update()
+        {
             konta.UpdateTokens(postawionePieniądze * -1);
             betOrzel.IsEnabled = false;
             betReszka.IsEnabled = false;
             coin.IsEnabled = true;
-            coPostawiles.Text = znak == 0 ? "Co postawiono: reszka" : "Co postawiono: orzeł";
+            coPostawiles.Text = znak == 0 ? "Co postawiono: tail" : "Co postawiono: head";
             wynik2.Text = "";
             coWypadlo.Text = "";
-
-
-
         }
 
         private void Zetony_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -86,7 +82,7 @@ namespace Unicat_Casino
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e)
         {
             Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
             okno.Show();
@@ -112,7 +108,7 @@ namespace Unicat_Casino
             }
 
 
-            coWypadlo.Text = wynikLosowania == 0 ? "Co wypadło: reszka" : "Co wypadło: orzeł";
+            coWypadlo.Text = wynikLosowania == 0 ? "Co wypadło: tail" : "Co wypadło: head";
             postawionePieniądze = 0;
             Zetony.Value = 1;
             coin.Visibility = Visibility.Visible;

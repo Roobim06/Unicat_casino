@@ -19,7 +19,11 @@
         
         <!--ekran1-->
         <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Name="MenuUniImg">
-            <TextBlock  FontSize="90" HorizontalAlignment="Center"> Paypal me money</TextBlock>
+            <TextBlock x:Name="uniSay" FontSize="60" TextAlignment="Center" TextWrapping="Wrap" Width="750" Text="Paypal me money">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="10" RenderingBias="Quality"/>
+                </TextBlock.Effect>
+            </TextBlock>
             <Image Source="\images\uni\uni-menu.png" />
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="MainMenu">
@@ -31,8 +35,8 @@
 
         
         <!--ekran2-->
-        <Button Style="{StaticResource BackButton}" Name="CancelButton" Background="{DynamicResource White}" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
-            <Image Source="images/controls/back.png" Width="50" Height="50"/>
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Visibility="Collapsed">
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
         </Button>
         <StackPanel VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Name="GamesPanel" Grid.Column="0" Grid.ColumnSpan="2" >
             <StackPanel.Resources>

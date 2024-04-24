@@ -10,15 +10,13 @@
 
     <Grid  Style="{DynamicResource background1}">
         <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
-            <Image Source="images/controls/back.png" Width="50" Height="50"/>
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
         </Button>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Zmień motyw aplikacji" Style="{DynamicResource SettingsTitle}"/>
 
-
-
             <StackPanel Orientation="Horizontal" Margin="6 10 0 10">
-                <RadioButton Name="BlackMode1" IsChecked="True" GroupName="themesSelection" Checked="DarkMode_Checked">
+                <RadioButton Name="BlackMode1" GroupName="themesSelection" Checked="DarkMode_Checked">
                     <RadioButton.LayoutTransform>
                         <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
                     </RadioButton.LayoutTransform>
@@ -56,15 +54,14 @@
             <TextBlock Text="Zmień ustawienia aplikacji" Style="{DynamicResource SettingsTitle}"/>
 
             <StackPanel Orientation="Horizontal" Margin="6 10 0 10">
-                <CheckBox Name="MuteMusicCheckbox" Checked="MuteMusic" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="10" >
+                <CheckBox Name="MuteMusicCheckbox" Unchecked="UnmuteMusic" Checked="MuteMusic" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" >
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
                     </CheckBox.LayoutTransform>
                 </CheckBox>
                 <TextBlock Margin="5 0 0 0" FontSize="18" FontWeight="Normal" Style="{DynamicResource SettingsTitle}"> Wycisz muzykę</TextBlock>
             </StackPanel>
-            <Button Click="MuteMusic_Click" Content="Wycisz muzykę" Style="{DynamicResource SettingsButton}"/>
-
+            
             <TextBlock Text="Debug" Style="{DynamicResource SettingsTitle}"/>
             <Button Click="AddTokens" Style="{DynamicResource SettingsButton}" Content="Dodaj żetony +200"/>
         </StackPanel>

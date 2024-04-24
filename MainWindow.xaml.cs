@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
+using System.Windows.Threading;
+using Microsoft.Win32;
+using System.Numerics;
 
 namespace Unicat_Casino
 {
@@ -23,7 +27,15 @@ namespace Unicat_Casino
         {
             InitializeComponent();
 
+            MusicPlayer okno = new MusicPlayer();
+            okno.Show();
         }
+
+        public MainWindow(bool abrbr)
+        {
+            InitializeComponent();
+        }
+
         static string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -50,41 +62,44 @@ namespace Unicat_Casino
              * sprawdzanie warunku haslo = dane wpisane przez uzytkownika
              * jesi wszystko dobrze to okno jest zamykane i przechodziny do menu window
              */
-            bool loggedin = false;
-            try
+            if (NickLog.Text != "" && Passlog2.Text != "")
             {
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = "SELECT Nick, Tokens FROM [User] WHERE CONVERT(varchar(max), Nick) = @Nick AND CONVERT(varchar(max), Password) = @Password;";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Nick", NickLog.Text);
-                command.Parameters.AddWithValue("@Password", HashPassword(PassLog.Password));
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
+                bool loggedin = false;
+                try
                 {
-                    while (reader.Read())
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    connection.Open();
+                    string query = "SELECT Nick, Tokens FROM [User] WHERE CONVERT(varchar(max), Nick) = @Nick AND CONVERT(varchar(max), Password) = @Password;";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Nick", NickLog.Text);
+                    command.Parameters.AddWithValue("@Password", HashPassword(PassLog.Password));
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
                     {
-                        MessageBox.Show("Udało sie zalogowac","Pomyslne zalogowanie");
-                        konta.konto = new User(Convert.ToString(reader["Nick"]), Convert.ToInt32(reader["Tokens"]));
-                        loggedin = true;
+                        while (reader.Read())
+                        {
+                            MessageBox.Show("Udało sie zalogowac", "Pomyslne zalogowanie");
+                            konta.konto = new User(Convert.ToString(reader["Nick"]), Convert.ToInt32(reader["Tokens"]));
+                            loggedin = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Błedne dane wprowadzone.", "Information");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Błedne dane wprowadzone.", "Information");
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+                }
+                if (loggedin)
+                {
+                    Menu menuWindow = new Menu();
+                    menuWindow.Show();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
-            }
-            if (loggedin)
-            {
-                Menu menuWindow = new Menu();
-                menuWindow.Show();
-                this.Close();
-            }
+            
         }
 
         private void GoMenu(object sender, RoutedEventArgs e)

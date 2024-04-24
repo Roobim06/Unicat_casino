@@ -203,7 +203,7 @@ namespace Unicat_Casino
             stopTimer.Start();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ClickCancelButton(object sender, RoutedEventArgs e)
         {
             Menu okno = new Menu();
             okno.Show();

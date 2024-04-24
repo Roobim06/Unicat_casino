@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Unicat_Casino"
         mc:Ignorable="d"
         Title="BlackJack" WindowState="Maximized"
-    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
+    WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920"
+        Background="{StaticResource Background}">
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}">
             <Setter Property="Width" Value="300"/>
@@ -41,8 +42,9 @@
         </Grid.Background>
         <Image Height="200" x:Name="backImage" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Source="images/cards/back1.jpg"/>
 
-        <Button  Visibility="Collapsed" x:Name="resetnie" Width="50" Height="50" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" FontSize="20">X</Button>
-
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
+        </Button>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <WrapPanel x:Name="dealertable" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200">

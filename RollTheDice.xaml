@@ -15,7 +15,9 @@
         </Style>
     </Window.Resources>
     <Grid Style="{DynamicResource background1}">
-        <Button Width="50" Height="50" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" FontSize="20">X</Button>
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
+        </Button>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="/images/dice/dice.png" Width="400" Height="400" HorizontalAlignment="Center" Name="dice" MouseLeftButtonDown="RollClick"/>
             <Image Width="400" Height="400" HorizontalAlignment="Center" Name="diceRoll" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/dice/roll.gif" />

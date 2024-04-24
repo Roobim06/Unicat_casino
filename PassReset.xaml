@@ -12,33 +12,30 @@
             <Setter Property="Height" Value="60"/>
         </Style>
     </Window.Resources>
+
     <Grid Style="{DynamicResource background1}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="stage1" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="522" Visibility="Visible">
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
+        </Button>
+       
+        <StackPanel x:Name="stage1" VerticalAlignment="Top" Height="522" Visibility="Visible"  Width="800">
             <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold">Formularz resetowania hasła</TextBlock>
             <Label FontSize="30">Podaj email na ktorym miałes załozone konto</Label>
             <TextBox x:Name="emailenter" TextChanged="emailenter_TextChanged"></TextBox>
             <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click">Wyslij kod</Button>
         </StackPanel>
-        <StackPanel x:Name="stage2"  Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+        <StackPanel x:Name="stage2"  Visibility="Collapsed" Width="800">
             <TextBlock FontSize="40" TextAlignment="Center" Text="Prosze podaj kod przesłany na email"/>
             <TextBox x:Name="codeenter"/>
             <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_1" Content="Sprawdz kod"/>
         </StackPanel>
-        <StackPanel x:Name="stage3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="522" Visibility="Collapsed">
+        <StackPanel x:Name="stage3" VerticalAlignment="Top" Height="522" Visibility="Collapsed" Width="800">
             <TextBlock FontSize="40" TextAlignment="Center" FontWeight="Bold" Text="Formularz resetowania hasła"/>
             <Label FontSize="30" Content="Podaj nowe hasło"/>
             <TextBox x:Name="passenter" TextChanged="passenter_TextChanged"/>
             <Button VerticalAlignment="Bottom" FontSize="30" Click="Button_Click_2" Content="Zresetuj hasło"/>
         </StackPanel>
+
+      
     </Grid>
 </Window>

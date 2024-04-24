@@ -19,9 +19,13 @@ namespace Unicat_Casino
     public partial class Settings : Window
     {
         string theme = "Themes/Dark.xaml";
+        MediaPlayer player = MusicPlayer.mediaPlayer;
+
+
         public Settings()
         {
             InitializeComponent();
+            MuteMusicCheckbox.IsChecked = MusicPlayer.wasPaused;
         }
 
         private void AddTokens(object sender, RoutedEventArgs e)
@@ -66,13 +70,16 @@ namespace Unicat_Casino
             this.Close();
         }
 
-        private void MuteMusic_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void MuteMusic(object sender, RoutedEventArgs e)
         {
+            player.Pause();
+            MusicPlayer.wasPaused = true;
 
+        }
+        private void UnmuteMusic(object sender, RoutedEventArgs e)
+        {
+            player.Play();
+            MusicPlayer.wasPaused = false;
         }
     }
 }

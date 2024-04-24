@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="choir.mp3" />
     <None Remove="images\backgrounds\bg-login-black.jpg" />
     <None Remove="images\backgrounds\bg-login-white.jpg" />
     <None Remove="images\backgrounds\bg-menu-black.jpg" />
@@ -213,6 +214,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="choir.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="images\backgrounds\bg-login-black.jpg" />
     <Resource Include="images\backgrounds\bg-login-white.jpg" />
     <Resource Include="images\backgrounds\bg-menu-black.jpg" />

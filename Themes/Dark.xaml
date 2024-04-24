@@ -48,7 +48,7 @@
         <Setter Property="BorderThickness" Value="4"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="Margin" Value="7"/>
+        <Setter Property="Margin" Value="10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -60,50 +60,10 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#444444"/>
-            </Trigger>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="60" To="80" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="80" To="60" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="400" To="450" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="450" To="400" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </Style.Triggers>
     </Style>
 
     <Style TargetType="Button" x:Key="CommonButtonStyle">
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="White"/>
@@ -136,7 +96,7 @@
                 <EventTrigger.Actions>
                     <BeginStoryboard>
                         <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="100" To="125" Duration="0:0:0.1" />
+                            <DoubleAnimation From="100" To="110" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger.Actions>
@@ -145,7 +105,7 @@
                 <EventTrigger.Actions>
                     <BeginStoryboard>
                         <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="125" To="100" Duration="0:0:0.1" />
+                            <DoubleAnimation From="110" To="100" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger.Actions>
@@ -154,7 +114,7 @@
                 <EventTrigger.Actions>
                     <BeginStoryboard>
                         <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="600" To="650" Duration="0:0:0.1" />
+                            <DoubleAnimation From="600" To="630" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger.Actions>
@@ -163,7 +123,7 @@
                 <EventTrigger.Actions>
                     <BeginStoryboard>
                         <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="650" To="600" Duration="0:0:0.1" />
+                            <DoubleAnimation From="630" To="600" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger.Actions>
@@ -175,101 +135,13 @@
         <Setter Property="Width" Value="500"/>
         <Setter Property="Height" Value="160"/>
         <Setter Property="Margin" Value="10"/>
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="160" To="185" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="185" To="160" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="500" To="550" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="550" To="500" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </Style.Triggers>
     </Style>
     <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}" x:Key="BackButton">
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="10"/>
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="50" To="75" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="75" To="50" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="50" To="75" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="75" To="50" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </Style.Triggers>
-    </Style>
-    <Style TargetType="TextBox">
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="Margin" Value="7"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontSize" Value="20"/>
     </Style>
 
-    <Style TargetType="PasswordBox">
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="Margin" Value="7"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontSize" Value="20"/>
-    </Style>
 
 
     <Style TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}" x:Key="SettingsButton">
@@ -278,44 +150,79 @@
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="60" To="80" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Height">
-                            <DoubleAnimation From="80" To="60" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseEnter">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="500" To="550" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Button.MouseLeave">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard  TargetProperty="Width">
-                            <DoubleAnimation From="550" To="500" Duration="0:0:0.1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </Style.Triggers>
     </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="White"
+                      ShadowDepth="0"
+                      BlurRadius="3"
+                      RenderingBias="Quality"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="TextBox">
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7"/>
+    </Style>
+
+    <Style TargetType="PasswordBox">
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Margin" Value="7"/>
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="FontSize" Value="40"/>
+    </Style>
+
+    <!--ruletka-->
+    <Style TargetType="Button" x:Key="basicRuletka">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="ruletkaRed" TargetType="Button" BasedOn="{StaticResource basicRuletka}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Red" CornerRadius="100">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ruletkaGreen" TargetType="Button" BasedOn="{StaticResource basicRuletka}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="LimeGreen" CornerRadius="100">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ruletkaBlack" TargetType="Button" BasedOn="{StaticResource basicRuletka}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Black" CornerRadius="100">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
 </ResourceDictionary>

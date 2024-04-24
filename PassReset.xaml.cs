@@ -20,9 +20,6 @@ using MailKit.Security;
 
 namespace Unicat_Casino
 {
-    /// <summary>
-    /// Logika interakcji dla klasy PassReset.xaml
-    /// </summary>
     public partial class PassReset : Window
     {
         string connectionString = "Data Source=(local);Initial Catalog=UniCatCasino_BaziaDanych;Integrated Security=True; TrustServerCertificate=True";
@@ -151,7 +148,7 @@ namespace Unicat_Casino
             else
             {
                 MessageBox.Show("niepoprawny kod");
-                MainWindow okno = new MainWindow();
+                MainWindow okno = new MainWindow(true);
                 okno.Show();
                 this.Close();
             }
@@ -192,7 +189,7 @@ namespace Unicat_Casino
                     command.Parameters.AddWithValue("@Pass", HashPassword(passenter.Text));
                     SqlDataReader reader = command.ExecuteReader();
                     MessageBox.Show("Zmieniono hasło");
-                    MainWindow okno = new MainWindow();
+                    MainWindow okno = new MainWindow(true);
                     okno.Show();
                     this.Close();
 
@@ -202,6 +199,13 @@ namespace Unicat_Casino
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error");
                 }
             }
+        }
+
+        private void ClickCancelButton(object sender, RoutedEventArgs e)
+        {
+            MainWindow okno = new MainWindow(true);
+            okno.Show();
+            this.Close();
         }
     }
 }
