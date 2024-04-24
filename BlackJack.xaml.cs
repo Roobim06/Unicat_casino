@@ -372,7 +372,7 @@ namespace Unicat_Casino
         {
             if (konta.konto.Tokens == 0)
             {
-                MessageBox.Show("nie stac cie biedaku");
+                MessageBox.Show("nie stać cie biedaku");
                 Menu okno = new Menu();
                 okno.Show();
                 this.Close();
