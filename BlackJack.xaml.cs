@@ -83,6 +83,7 @@ namespace Unicat_Casino
             sliderz.Visibility = Visibility.Visible;
             zatwierdz.Visibility = Visibility.Visible;
             dobierzkarte.Visibility = Visibility.Collapsed;
+            twojepunkty.Visibility = Visibility.Collapsed;
             zakonczture.Visibility = Visibility.Collapsed;
             playertable.Visibility = Visibility.Collapsed;
             dealertable.Visibility = Visibility.Collapsed;
@@ -172,6 +173,7 @@ namespace Unicat_Casino
                     playerpoints += Convert.ToInt32(karta.numer);
                 }
             }
+            twojepunkty.Content = "Twoje punkty:"+playerpoints;
             if(playerpoints == 21)
             {
                 tokens = Convert.ToInt32(tokens * 1.5);
@@ -382,6 +384,7 @@ namespace Unicat_Casino
             dobierzkarte.Visibility = Visibility.Visible;
             zakonczture.Visibility = Visibility.Visible;
             playertable.Visibility = Visibility.Visible;
+            twojepunkty.Visibility = Visibility.Visible;
             dealertable.Visibility = Visibility.Visible;
             konta.UpdateTokens(tokens * -1);
             firstturn();

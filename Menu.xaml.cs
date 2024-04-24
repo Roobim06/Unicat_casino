@@ -38,7 +38,8 @@ namespace Unicat_Casino
             "Lubię tuńczyka!",
             "Głupcze! Byle śmiertelnik nie pokona boskiego Uni!",
             "Mlem",
-            "チキンナゲットが好き"
+            "チキンナゲットが好き",
+            "Grosza daj Uni Catowi"
             ];
         public Menu()
         {

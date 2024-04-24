@@ -56,6 +56,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="dobierzkarte" Click="Button_Click" Visibility="Collapsed">Dobierz karte</Button>
                 <Button x:Name="zakonczture" Click="Button_Click_1" Visibility="Collapsed">Zakoncz ture</Button>
+                <Label x:Name="twojepunkty" Visibility="Collapsed" FontSize="20">Twoje punkty: 0</Label>
             </StackPanel>
 
             <TextBlock Visibility="Collapsed" x:Name="reset" Foreground="Black" HorizontalAlignment="Center" >Zagraj ponownie?</TextBlock>

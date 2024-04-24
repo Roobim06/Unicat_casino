@@ -32,9 +32,9 @@
         <!-- Grid z elementami w środku -->
         <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="612" Height="222" Margin="0,443,0,0">
             <DockPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <Image x:Name="slot1" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
-                <Image x:Name="slot2" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
-                <Image x:Name="slot3" Source="\images\\SlotMachine\\los1.jpg" Margin="10"/>
+                <Image x:Name="slot1" Source="\images\\SlotMachine\\los1.jpg" Margin="0,25,60,0"/>
+                <Image x:Name="slot2" Source="\images\\SlotMachine\\los1.jpg" Margin="0,25,30,0"/>
+                <Image x:Name="slot3" Source="\images\\SlotMachine\\los1.jpg" Margin="20,25,0,0"/>
             </DockPanel>
         </Grid>
     </Grid>
