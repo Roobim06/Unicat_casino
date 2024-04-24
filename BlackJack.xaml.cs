@@ -64,7 +64,7 @@ namespace Unicat_Casino
         private void resetgame()
         {
             reset.Visibility = Visibility.Collapsed;
-            resetnie.Visibility = Visibility.Collapsed;
+            CancelButton.Visibility = Visibility.Collapsed;
             resettak.Visibility = Visibility.Collapsed;
             dobierzkarte.IsEnabled = true;
             zakonczture.IsEnabled = true;
@@ -145,7 +145,7 @@ namespace Unicat_Casino
         {
             reset.Visibility = Visibility.Visible;
             resettak.Visibility = Visibility.Visible;
-            resetnie.Visibility = Visibility.Visible;
+            CancelButton.Visibility = Visibility.Visible;
         }
         private void handleplayerpoints()
         {
@@ -360,13 +360,6 @@ namespace Unicat_Casino
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             resetgame();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            Unicat_Casino.Menu okno = new Unicat_Casino.Menu();
-            okno.Show();
-            this.Close();
         }
         private void updatetokens()
         {

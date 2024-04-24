@@ -9,14 +9,16 @@
         Title="Rzut monetą" WindowState="Maximized"
     WindowStyle="None" ResizeMode="NoResize" Height="1080" Width="1920">
     <Grid Style="{DynamicResource background1}">
-        <Button Width="50" Height="50" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0">X</Button>
+        <Button Style="{StaticResource BackButton}" Name="CancelButton" Click="ClickCancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+            <Image Source="images/controls/back.png" Width="40" Height="40"/>
+        </Button>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="/images/coin/orzel.png" Width="400" Height="400" HorizontalAlignment="Center" Name="coin" MouseLeftButtonDown="Flip_Click"/>
             <Image Width="400" Height="400" HorizontalAlignment="Center" Name="coinFlip" Visibility="Collapsed" gif:ImageBehavior.AnimatedSource="images/coin/fastflip.gif" />
             <TextBlock Text="Rzuć monetą" FontSize="40" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Orzeł" Click="FlipOrzel" Name="betOrzel"/>
-                <Button Content="Reszka" Click="FlipReszka" Name="betReszka" />
+                <Button Content="Head" Click="FlipOrzel" Name="betOrzel"/>
+                <Button Content="Tail" Click="FlipReszka" Name="betReszka" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock Text="" FontWeight="Normal" FontSize="22" HorizontalAlignment="Center" Name="coPostawiles" Margin="0 7 20 0"/>

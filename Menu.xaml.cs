@@ -12,17 +12,41 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Unicat_Casino
 {
     public partial class Menu : Window
     {
+        int latestSentence = 0;
+        Random rnd = new Random();
+        string[] sentences = [ "Paypal me money!",
+            "Co chcesz wylicytować? meow",
+            "Oddaj mi całe swoje oszczędności! meow",
+            "Oddawaj hajs! meow",
+            "Meow meow meow meow",
+            "Jestem sobie uni tak, a piękność to mój znak!",
+            "Uni Uni Uni Uni Uni Uni!",
+            "Hahahahah meow! mało brakowało!",
+            "Money money money! Must be funny!",
+            "jestem najbogatszym kotem!",
+            "Otwórz przede mną portfel!",
+            "Daj złotóweczkę!",
+            "Hsssssssssssssss!",
+            "Kiss kiss kiss kiss",
+            "Lubię tuńczyka!",
+            "Głupcze! Byle śmiertelnik nie pokona boskiego Uni!",
+            "Mlem",
+            "チキンナゲットが好き"
+            ];
         public Menu()
         {
             InitializeComponent();
             MenuUniImg.Visibility = Visibility.Visible;
             MainMenu.Visibility = Visibility.Visible;
             Datacontexthere.DataContext = konta.konto;
+            UniSay();
         }
 
         private void ClickExit(object sender, RoutedEventArgs e)
@@ -35,7 +59,7 @@ namespace Unicat_Casino
         }
         private void ClickLog(object sender, RoutedEventArgs e){
           konta.konto = null;
-            MainWindow okno = new MainWindow();
+            MainWindow okno = new MainWindow(true);
             okno.Show();
             this.Close();
         }
@@ -96,6 +120,25 @@ namespace Unicat_Casino
             MniejszeWieksze okno = new MniejszeWieksze();
             okno.Show();
             this.Close();
+        }
+
+
+        private async void UniSay()
+        {
+            while (true)
+            {
+                await Task.Delay(4500);
+                while (true)
+                {
+                    int newsentence = rnd.Next(0, sentences.Length);
+                    if (latestSentence != newsentence)
+                    {
+                        uniSay.Text = sentences[newsentence];
+                        latestSentence = rnd.Next(0, sentences.Length);
+                        break;
+                    }
+                }
+            }
         }
     }
 }
