@@ -98,8 +98,8 @@ namespace Unicat_Casino
                 if (foundmail)
                 {
                     code = GenerateRandomUpperCaseLetters();
-                    string emailsend = "damig@onet.pl";
-                    string password = "45*54(qwer";
+                    string emailsend = "unicatcasino@onet.pl";
+                    string password = "5U6Y-7G6U-MEEQ-GLEN";
                     var message = new MimeMessage();
                     message.From.Add(new MailboxAddress("Resetowanie hasla", emailsend));
                     message.To.Add(new MailboxAddress("Odbiorca", email));
